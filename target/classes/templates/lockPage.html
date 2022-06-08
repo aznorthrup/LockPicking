@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/forms.css">
+<title>Locks</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link, active" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<table>
+		<tr th:each="lock:${lock}">
+			<td th:text="${lock.toString()}"></td>
+		</tr>
+	</table>
+	<div class="center">
+		<form th:action="@{/updateLock/{id}(id=${lock.lockId})}" method="GET">
+			<input class="edit-and-delete-buttons" type="submit"
+				value="Edit Lock" />
+		</form>
+		<form th:action="@{/deleteLock/{id}(id=${lock.lockId})}" method="GET">
+			<input class="edit-and-delete-buttons" type="submit"
+				value="Delete Lock" />
+		</form>
+	</div>
+</body>
+
+</html>

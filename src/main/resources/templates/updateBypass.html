@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/forms.css">
+<title>Update Bypass Tool</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link, active" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<form action="#" th:action="@{/updateBypass/{id}(id=${bypass.toolId})}"
+		th:object="${bypass}" method="POST">
+		<table>
+			<tr>
+				<td>Tool Type:</td>
+				<td><input type="text" th:field="*{toolType}" /></td>
+				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Bypass
+					Type Error</td>
+			</tr>
+			<tr>
+				<td>Vulnerability type:</td>
+				<td><input type="text" th:field="*{lockVuln}" /></td>
+				<td th:if="${#fields.hasErrors('lockVuln')}" th:errors="*{lockVuln}">Lock
+					Vulnerability Error</td>
+			</tr>
+			<tr>
+				<td>Tool Use:</td>
+				<td><input type="text" th:field="*{toolUse}" /></td>
+				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Bypass
+					Use Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

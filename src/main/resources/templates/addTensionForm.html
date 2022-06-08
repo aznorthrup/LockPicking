@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/forms.css">
+<title>New Tension Tool</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link, active" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<form action="#" th:action="@{/addTension}" th:object="${toolTension}"
+		method="POST">
+		<table>
+			<tr>
+				<td>Tool Type:</td>
+				<td><input type="text" th:field="*{toolType}" required /></td>
+				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Tool
+					Type Error</td>
+			</tr>
+			<tr>
+				<td>Tension Type:</td>
+				<td><input type="text" th:field="*{tensionType}" required /></td>
+				<td th:if="${#fields.hasErrors('tensionType')}"
+					th:errors="*{tensionType}">Tension Type Error</td>
+			</tr>
+			<tr>
+				<td>Tool Use:</td>
+				<td><input type="text" th:field="*{toolUse}" required /></td>
+				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Tool
+					Use Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

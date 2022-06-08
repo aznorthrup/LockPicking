@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/users.css" />
+<title>User Registration</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link, active"
+					th:href="@{/registration}">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<form th:action="@{/registration}" th:object="${user}" method="POST">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}" required /></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+					Error</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" th:field="*{email}" required /></td>
+				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+					Error</td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" th:field="*{password}" required /></td>
+				<td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+					Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+				<td><span style="font-size: 15px;">Already have an
+						account? <a href="/" th:href="@{/login}">Log in</a>
+				</span></td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	<div th:if="${param.success}">
+		<div class="alert alert-info center">Welcome to the application!</div>
+	</div>
+
+</body>
+
+</html>

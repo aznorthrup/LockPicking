@@ -1,0 +1,130 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
+	;
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: rgb(60, 60, 60);
+	color: white;
+}
+
+ul {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+.active {
+	background-color: rgb(0, 128, 255);
+}
+
+.active:hover {
+	background-color: rgb(0, 64, 255);
+}
+
+table {
+	margin: auto;
+	margin-top: 10%;
+	padding: 3%;
+	background-color: rgb(30, 30, 30, 75%);
+	box-shadow: 5px 5px 5px black;
+	border-radius: 20px;
+	font-size: 25px;
+}
+
+select {
+	width: 100%;
+}
+
+input{
+	font-size: 20px;
+	height:80%;
+	width:85%;
+	margin:5%;
+	border-radius:20px;
+	padding-left:4%;
+}
+
+select{
+	font-size: 20px;
+	height:80%;
+	width:92%;
+	margin-left:8%;
+	border-radius:20px;
+	padding-left:4%;
+}
+
+button {
+	width: 100%;
+	height: 30px;
+	border: none;
+	color: white;
+	background-color: rgb(170, 50, 50, 75%);
+	border-radius:20px;
+}
+
+button:hover {
+	background-color: rgb(170, 50, 50);
+}
+
+.edit-and-delete-buttons{
+	width: 15%;
+	height: 2rem;
+	color: white;
+	border: none;
+	background-color: rgb(170, 50, 50, 75%);
+	border: none;
+	color: white;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px black;
+	font-size:13px;
+	padding-left:0;
+}
+
+.center {
+	margin:auto;
+	text-align: center;
+}
+
+.alert-info{
+	padding:8px;
+	width:15%;
+	height:auto;
+	background-color:rgb(170, 50, 50, 75%);
+	border-radius:20px;
+}
+
+a{
+	color:cyan;
+	text-decoration:none;
+}
+
+a:hover{
+	color:lightblue;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="/css/users.css" />
+<title>Log In</title>
+</head>
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link, active"
+					th:href="@{/login}">Log In</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<form th:action="@{/login}" method="POST">
+		<table>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" id="username" name="username" placeholder="Username/Email" required /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id="password" name="password" placeholder="Password" required /></td>
+			</tr>
+			<tr>
+				<td><button name="login-submit" id="login-submit" type="submit">Log In</button></td>
+				<td><span style="font-size: 15px;">New to the scene? <a href="/" th:href="@{/registration}">Register here</a>
+				</span></td>
+			</tr>
+		</table>
+	</form>
+	<br>
+	
+	<div th:if="${param.error}">
+		<div class="alert alert-info center">Invalid username or
+			password!</div>
+	</div>
+	
+	<div th:if="${param.logout}">
+		<div class="alert alert-info center">Have a great day!</div>
+	</div>
+
+</body>
+</html>

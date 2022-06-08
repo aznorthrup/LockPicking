@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="/css/styles.css">
+<title>Lock Box</title>
+</head>
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link, active" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="center">
+		<h1 style="font-size: 50px;">Welcome to the lock box!</h1>
+		<br>
+		<h3>
+			-----------------<span style="color: rgb(170, 50, 50)">
+				Security by obscurity</span> ----------------- <br>
+			<br>The long-standing delusion that as long as nobody truly
+			knows how a lock works, they won't know how to get past it. In an era
+			where the answers to all of life's mysteries are tucked away in our
+			pockets, <em>security by obscurity is not good enough.</em> But don't
+			take my word for it. Why not see for yourself?
+		</h3>
+		<br>
+		<h3>To get us started, here is how a pin-tumbler lock works:</h3>
+		<br>
+		<iframe width="560" height="315"
+			src="https://www.youtube.com/embed/v87wDYyOZPY?start=10"
+			title="How a pin tumber lock works"></iframe>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/styles.css" />
+<title>Bypass Methods</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link, active" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<table>
+		<tr th:each="bypass:${bypass}">
+			<td colspan="3" th:text="${bypass.toShortString()}"></td>
+			<td><form class="add-btn-form"
+					th:action="@{/allBypass/{id}(id=${bypass.toolId})}" method="GET">
+					<input class="add-btn" type="submit" value="See More" />
+				</form></td>
+		</tr>
+	</table>
+	<div class="center">
+		<form th:action="@{/addBypass}" method="GET">
+			<input type="submit" value="Add Bypass Method">
+		</form>
+	</div>
+</body>
+
+</html>

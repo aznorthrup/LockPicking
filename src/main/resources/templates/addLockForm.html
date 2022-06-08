@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" href="/css/forms.css">
+<title>New Lock</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link, active" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<form action="#" th:action="@{/addLock}" th:object="${lockClass}"
+		method="POST">
+		<table>
+			<tr>
+				<td>Brand:</td>
+				<td><input type="text" th:field="*{brand}" required /></td>
+				<td th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand
+					Error</td>
+			</tr>
+			<tr>
+				<td>Model:</td>
+				<td><input type="text" th:field="*{model}" required /></td>
+				<td th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Model
+					Error</td>
+			</tr>
+			<tr>
+				<td>Material:</td>
+				<td><input type="text" th:field="*{material}" required /></td>
+				<td th:if="${#fields.hasErrors('material')}" th:errors="*{material}">Material
+					Error</td>
+			</tr>
+			<tr>
+				<td>Picking Tool:</td>
+				<td><select th:field="*{pick.toolId}">
+						<option th:each="pick:${pick}" th:value="${pick.toolId}"
+							th:text="${pick.toolType}"></option>
+				</select></td>
+				<td th:if="${#fields.hasErrors('pick')}" th:errors="*{pick}">Pick
+					Error</td>
+			</tr>
+			<tr>
+				<td>Tension Tool:</td>
+				<td><select th:field="*{tension.toolId}">
+						<option th:each="tension:${tension}" th:value="${tension.toolId}"
+							th:text="${tension.toolType}"></option>
+				</select></td>
+				<td th:if="${#fields.hasErrors('tension')}" th:errors="*{tension}">Tension
+					Error</td>
+			</tr>
+			<tr>
+				<td>Bypass Tool:</td>
+				<td><select th:field="*{bestBypass.toolId}">
+						<option th:each="bestBypass:${bestBypass}"
+							th:value="${bestBypass.toolId}" th:text="${bestBypass.toolType}"></option>
+				</select></td>
+				<td th:if="${#fields.hasErrors('bestBypass')}"
+					th:errors="*{bestBypass}">Bypass Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
