@@ -120,11 +120,11 @@ button:hover {
 	border-radius:20px;
 }
 
-a{
-	color:cyan;
+.sub-user{
+	color:rgb(170, 50, 50, 75%);
 	text-decoration:none;
 }
 
-a:hover{
-	color:lightblue;
+.sub-user:hover{
+	color:rgb(170, 50, 50);
 }
