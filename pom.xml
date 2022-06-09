@@ -68,7 +68,7 @@
 				<configuration>
 					<appName>${lockpickingapp}</appName>
 					<processTypes>
-						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.example.Main</web>
+						<web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.brycenorthrup.lockpickingapp.LockpickingappApplication</web>
 					</processTypes>
 				</configuration>
 			</plugin>
