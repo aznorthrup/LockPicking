@@ -38,12 +38,12 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/updateLock/{id}(id=${lock.lockId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Edit Lock" />
 		</form>
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/deleteLock/{id}(id=${lock.lockId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Delete Lock" />

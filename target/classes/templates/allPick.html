@@ -44,7 +44,7 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')" th:action="@{/addPick}"
+		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addPick}"
 			method="GET">
 			<input type="submit" value="Add Pick">
 		</form>

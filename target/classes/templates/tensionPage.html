@@ -38,12 +38,12 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/updateTension/{id}(id=${tension.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Edit Tension Tool" />
 		</form>
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/deleteTension/{id}(id=${tension.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Delete Tension Tool" />

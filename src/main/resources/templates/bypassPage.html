@@ -38,12 +38,12 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/updateBypass/{id}(id=${bypass.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Edit Bypass Tool" />
 		</form>
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/deleteBypass/{id}(id=${bypass.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Delete Bypass Tool" />

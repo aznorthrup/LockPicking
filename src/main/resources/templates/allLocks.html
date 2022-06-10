@@ -43,7 +43,7 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')" th:action="@{/addLock}"
+		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addLock}"
 			method="GET">
 			<input type="submit" value="Add Lock" />
 		</form>

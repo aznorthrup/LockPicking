@@ -43,7 +43,7 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')" th:action="@{/addTension}"
+		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addTension}"
 			method="GET">
 			<input type="submit" value="Add Tension Tool">
 		</form>

@@ -40,12 +40,12 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/updatePick/{id}(id=${pick.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Edit Pick" />
 		</form>
-		<form sec:authorize="hasRole('ADMIN')"
+		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/deletePick/{id}(id=${pick.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Delete Pick" />
