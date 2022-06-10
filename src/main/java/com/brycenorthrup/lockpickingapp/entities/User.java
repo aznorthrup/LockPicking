@@ -20,8 +20,6 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long userId;
 	@NotNull
-	private String name;
-	@NotNull
 	private String email;
 	@NotNull
 	private String password;
@@ -30,16 +28,14 @@ public class User {
 	
 	public User(){}
 	
-	public User( String name, String email, String password, Collection<Role> roles) {
-		this.name = name;
+	public User(String email, String password, Collection<Role> roles) {
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
 	}
 	
-	public User(Long userId, String name, String email, String password) {
+	public User(Long userId, String email, String password) {
 		this.userId = userId;
-		this.name = name;
 		this.email = email;
 		this.password = password;
 	}
@@ -50,14 +46,6 @@ public class User {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getEmail() {
@@ -86,7 +74,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User: " + name + " has the email: " + email + " and a password containing " + password.length() + " characters.";
+		return "User email: " + email + " has a password containing " + password.length() + " characters.";
 	}
 	
 }

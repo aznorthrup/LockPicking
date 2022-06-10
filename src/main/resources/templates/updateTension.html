@@ -27,6 +27,10 @@
 
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
+
 			</ul>
 		</div>
 	</nav>
@@ -35,7 +39,9 @@
 		th:object="${tension}" method="POST">
 		<table>
 			<tr>
-				<td><em>Example: The <span>Z-Bar</span> provides <span>bottom of the keyway</span> tension for locks with <span>simple and flush</span> keyways
+				<td><em>Example: The <span>Z-Bar</span> provides <span>bottom
+							of the keyway</span> tension for locks with <span>simple and
+							flush</span> keyways
 				</em></td>
 			</tr>
 			<tr class="spacer"></tr>
@@ -43,13 +49,14 @@
 				<td>The <input type="text" th:field="*{toolType}" /> provides
 					<input style="width: 20%;" type="text" th:field="*{tensionType}" />
 					tension for locks with <input type="text" th:field="*{toolUse}" />
-					keyways.</td>
+					keyways.
+				</td>
 				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Tool
 					Type Error</td>
-					
+
 				<td th:if="${#fields.hasErrors('tensionType')}"
 					th:errors="*{tensionType}">Tension Type Error</td>
-					
+
 				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Tool
 					Use Error</td>
 			</tr>

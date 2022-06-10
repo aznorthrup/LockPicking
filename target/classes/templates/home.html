@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <link rel="stylesheet" href="/css/styles.css">
 <title>Lock Box</title>
@@ -21,8 +22,14 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
+						
+						
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
+
 			</ul>
 		</div>
 	</nav>
@@ -30,8 +37,7 @@
 		<h1 style="font-size: 50px;">Welcome to the lock box!</h1>
 		<br>
 		<h3>
-			-----------------<span style="color: rgb(170, 50, 50)">
-				Security by obscurity</span> ----------------- <br>
+			<span style="color: rgb(170, 50, 50)"> Security by obscurity:</span><br>
 			<br>The long-standing delusion that as long as nobody truly
 			knows how a lock works, they won't know how to get past it. In an era
 			where the answers to all of life's mysteries are tucked away in our

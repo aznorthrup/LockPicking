@@ -26,6 +26,9 @@
 						Tools</a></li>
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -41,8 +44,9 @@
 			<tr class="spacer"></tr>
 			<tr>
 				<td>The <input type="text" th:field="*{toolType}" /> is used
-					for locks with <input style="width: 18%;" type="text" th:field="*{lockVuln}" /> and
-					works by <input style="width: 25%;" type="text" th:field="*{toolUse}" />.
+					for locks with <input style="width: 18%;" type="text"
+					th:field="*{lockVuln}" /> and works by <input style="width: 25%;"
+					type="text" th:field="*{toolUse}" />.
 				</td>
 
 				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Bypass

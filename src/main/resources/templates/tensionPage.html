@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
 <link rel="stylesheet" href="/css/forms.css">
@@ -25,6 +26,9 @@
 						Tools</a></li>
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -34,13 +38,13 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form th:action="@{/updateTension/{id}(id=${tension.toolId})}"
-			method="GET">
+		<form sec:authorize="hasRole('ADMIN')"
+			th:action="@{/updateTension/{id}(id=${tension.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Edit Tension Tool" />
 		</form>
-		<form th:action="@{/deleteTension/{id}(id=${tension.toolId})}"
-			method="GET">
+		<form sec:authorize="hasRole('ADMIN')"
+			th:action="@{/deleteTension/{id}(id=${tension.toolId})}" method="GET">
 			<input class="edit-and-delete-buttons" type="submit"
 				value="Delete Tension Tool" />
 		</form>

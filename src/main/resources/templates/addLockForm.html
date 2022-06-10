@@ -26,6 +26,9 @@
 						Tools</a></li>
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -50,7 +53,8 @@
 			</tr>
 			<tr>
 				<td>Model:</td>
-				<td><input type="text" th:field="*{model}" placeholder="No. 41" required/></td>
+				<td><input type="text" th:field="*{model}" placeholder="No. 41"
+					required /></td>
 				<td th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Model
 					Error</td>
 			</tr>

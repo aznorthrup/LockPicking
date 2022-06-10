@@ -40,6 +40,10 @@ li a:hover {
 	background-color: #111;
 }
 
+.username:hover{
+	background-color:#333;
+}
+
 .active {
 	background-color: rgb(0, 128, 255);
 }
