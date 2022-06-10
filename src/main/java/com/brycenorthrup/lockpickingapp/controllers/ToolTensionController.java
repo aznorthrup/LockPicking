@@ -31,15 +31,15 @@ public class ToolTensionController {
 			count++;
 		}
 		if (count==0) {
-			ToolTension tension1 = new ToolTension("Z-Bar", " bottom of the keyway ", "un-guarded and narrow");
-			ToolTension tension3 = new ToolTension("Z-Bar TOK", "top of the keyway", "guarded and complex ");
+			ToolTension tension1 = new ToolTension("Mantis", "all forms of", "cylindrical");
 			ToolTension tension2 = new ToolTension("Spring", "bottom of the keyway",
 					"precisely aligned cylinders and narrow");
-			ToolTension tension4 = new ToolTension("Mantis", "all tension forms", "cylindrical");
-			tensionRepository.save(tension4);
-			tensionRepository.save(tension3);
-			tensionRepository.save(tension2);
+			ToolTension tension3 = new ToolTension("Z-Bar", "bottom of the keyway", "simple and flush");
+			ToolTension tension4 = new ToolTension("Z-Bar TOK", "top of the keyway", "guarded and complex ");
 			tensionRepository.save(tension1);
+			tensionRepository.save(tension2);
+			tensionRepository.save(tension3);
+			tensionRepository.save(tension4);
 		}
 		tension = tensionRepository.findAll();
 		logger.info("Displayed all tension tools");

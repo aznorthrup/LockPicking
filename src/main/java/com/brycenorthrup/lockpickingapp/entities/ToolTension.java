@@ -61,7 +61,7 @@ public class ToolTension{
 
 	@Override
 	public String toString() {
-		return "The " + toolType + " provides " + tensionType + " for locks with " + toolUse + " keyways.";
+		return "The " + toolType + " provides " + tensionType + " tension for locks with " + toolUse + " keyways.";
 	}
 	
 }

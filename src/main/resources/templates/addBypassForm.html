@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/updateforms.css">
 <title>New Bypass Method</title>
 </head>
 
@@ -33,23 +33,28 @@
 		method="POST">
 		<table>
 			<tr>
-				<td>Tool Type:</td>
-				<td><input type="text" th:field="*{toolType}" required /></td>
+				<td><em>Example: The <span>Comb</span> is used for locks
+						with <span>a loose fitting cylinder</span> and works by <span>pushing
+							all pins past the cylinder</span>.
+				</em></td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr>
+				<td>The <input type="text" th:field="*{toolType}" /> is used
+					for locks with <input style="width: 18%;" type="text" th:field="*{lockVuln}" /> and
+					works by <input style="width: 25%;" type="text" th:field="*{toolUse}" />.
+				</td>
+
 				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Bypass
 					Type Error</td>
-			</tr>
-			<tr>
-				<td>Vulnerability type:</td>
-				<td><input type="text" th:field="*{lockVuln}" required /></td>
+
 				<td th:if="${#fields.hasErrors('lockVuln')}" th:errors="*{lockVuln}">Lock
 					Vulnerability Error</td>
-			</tr>
-			<tr>
-				<td>Tool Use:</td>
-				<td><input type="text" th:field="*{toolUse}" required /></td>
+
 				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Bypass
 					Use Error</td>
 			</tr>
+			<tr class="spacer"></tr>
 			<tr>
 				<td><button type="submit">Submit</button></td>
 			</tr>

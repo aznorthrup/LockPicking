@@ -32,14 +32,20 @@ public class ToolPickController {
 			count++;
 		}
 		if (count==0) {
-			ToolPick pick1 = new ToolPick("Short hook", "narrow");
-			ToolPick pick2 = new ToolPick("Medium hook", "open");
-			ToolPick pick3 = new ToolPick("Deep hook", "large");
-			ToolPick pick4 = new ToolPick("Dimple pick", "dimpled/smiley");
-			pickRepository.save(pick4);
-			pickRepository.save(pick3);
-			pickRepository.save(pick2);
+			ToolPick pick1 = new ToolPick("Deep hook", "large");
+			ToolPick pick2 = new ToolPick("Dimple pick", "dimpled/smiley");
+			ToolPick pick3 = new ToolPick("Gem", "zipping or picking most");
+			ToolPick pick4 = new ToolPick("Half diamond", "zipping most");
+			ToolPick pick5 = new ToolPick("Medium hook", "open");
+			ToolPick pick6 = new ToolPick("Offset hook", "complicated or hard to navigate");
+			ToolPick pick7 = new ToolPick("Short hook", "narrow");
 			pickRepository.save(pick1);
+			pickRepository.save(pick2);
+			pickRepository.save(pick3);
+			pickRepository.save(pick4);
+			pickRepository.save(pick5);
+			pickRepository.save(pick6);
+			pickRepository.save(pick7);
 		}
 		pick = pickRepository.findAll();
 		logger.info("Displayed all pick tools");

@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/updateforms.css">
 <title>Update Pick</title>
 </head>
 
@@ -35,19 +35,27 @@
 		th:object="${pick}" method="POST">
 		<table>
 			<tr>
-				<td>Tool Type:</td>
-				<td><input type="text" th:field="*{toolType}" /></td>
+
+				<td><em>Example: The <span>Medium Hook</span> is used for
+						locks with <span> open </span> keyways.
+				</em></td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr>
+				<td>The <input style="width: 20%;" type="text"
+					th:field="*{toolType}" /> is used for locks with <input
+					style="width: 20%;" type="text" th:field="*{toolUse}" /> keyways.
+				</td>
 				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Tool
 					Type Error</td>
-			</tr>
-			<tr>
-				<td>Tool Use:</td>
-				<td><input type="text" th:field="*{toolUse}" /></td>
 				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Tool
 					Use Error</td>
 			</tr>
+			<tr class="spacer"></tr>
 			<tr>
-				<td><button type="submit">Submit</button></td>
+				<td>
+					<button type="submit">Submit</button>
+				</td>
 			</tr>
 		</table>
 	</form>

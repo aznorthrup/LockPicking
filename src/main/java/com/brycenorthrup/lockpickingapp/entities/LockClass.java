@@ -8,6 +8,8 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 import org.springframework.lang.Nullable;
 
 @Entity
@@ -25,12 +27,15 @@ public class LockClass {
 	@Size(min = 2, message = "Must be more than one character.")
 	private String material;
 	@OneToOne
+	@NotFound(action = NotFoundAction.IGNORE)
 	@Nullable
 	private ToolPick pick;
 	@OneToOne
+	@NotFound(action = NotFoundAction.IGNORE)
 	@Nullable
 	private ToolTension tension;
 	@OneToOne
+	@NotFound(action = NotFoundAction.IGNORE)
 	@Nullable
 	private ToolBypass bestBypass;
 
@@ -99,20 +104,29 @@ public class LockClass {
 	public void setBestBypass(ToolBypass bestBypass) {
 		this.bestBypass = bestBypass;
 	}
-	
+
 	public String toShortString() {
 		return brand + " " + model;
 	}
 
 	@Override
 	public String toString() {
-		if (this.pick != null && this.tension != null && this.bestBypass == null) {
-			return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a " + pick.getToolType() + " and a " + tension.getToolType() + ". It's best bypass method is not known... yet!";
-		}
 		if (this.pick == null || this.tension == null || this.bestBypass == null) {
-			return "The " + brand + " " + model + " has a " + material + " shackle." + "And it still needs picking information!";
+			return "The " + brand + " " + model + " has a " + material + " shackle."
+					+ "Its picking and best bypass information are not known... yet!";
+		} else if (this.pick == null || this.tension == null && this.bestBypass != null) {
+			return "The " + brand + " " + model + " has a " + material + " shackle. "
+					+ "It still needs picking information, but it is best bypassed with a "
+					+ this.bestBypass.getToolType();
+		} else if (this.pick != null && this.tension != null && this.bestBypass == null) {
+			return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a "
+					+ pick.getToolType() + " and a " + tension.getToolType()
+					+ ". It's best bypass method is not known... yet!";
+		} else {
+			return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a "
+					+ pick.getToolType() + " and a " + tension.getToolType() + ", and is best bypassed with a "
+					+ bestBypass.getToolType();
 		}
-		return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a " + pick.getToolType() + " and a " + tension.getToolType() + ", and is best bypassed with a " + bestBypass.getToolType();
 	}
 
 }

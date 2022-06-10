@@ -34,22 +34,38 @@
 		<table>
 			<tr>
 				<td>Brand:</td>
-				<td><input type="text" th:field="*{brand}"
-					placeholder="${lock.getBrand()}" /></td>
+				<td><select th:field="*{brand}">
+						<option th:value="Abus">Abus</option>
+						<option th:value="Ace">Ace</option>
+						<option th:value="Desired-Tools">Desired-Tools</option>
+						<option th:value="Kwikset">Kwikset</option>
+						<option th:value="Master">Master</option>
+						<option th:value="ORIA">ORIA</option>
+						<option th:value="Schlegg">Schlegg</option>
+						<option th:value="Stanley">Stanley</option>
+						<option th:value="Steel-Series">Steel-Series</option>
+				</select></td>
 				<td th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand
 					Error</td>
 			</tr>
 			<tr>
 				<td>Model:</td>
 				<td><input type="text" th:field="*{model}"
-					placeholder="${lock.getModel()}" /></td>
+					placeholder="M-150" /></td>
 				<td th:if="${#fields.hasErrors('model')}" th:errors="*{model}">Model
 					Error</td>
 			</tr>
 			<tr>
 				<td>Material:</td>
-				<td><input type="text" th:field="*{material}"
-					placeholder="${lock.getMaterial()}" /></td>
+				<td><select th:field="*{material}">
+						<option th:value="Aluminum">Aluminum</option>
+						<option th:value="Boron-Alloy">Boron-Alloy</option>
+						<option th:value="Bronze">Bronze</option>
+						<option th:value="Bronze-Alloy">Bronze-Alloy</option>
+						<option th:value="Hardened-Steel">Hardened-Steel</option>
+						<option th:value="Steel">Steel</option>
+						<option th:value="Steel-Alloy">Steel-Alloy</option>
+				</select></td>
 				<td th:if="${#fields.hasErrors('material')}" th:errors="*{material}">Material
 					Error</td>
 			</tr>
@@ -67,9 +83,7 @@
 				<td><select th:field="*{tension.toolId}">
 						<option th:each="tension:${tension}" th:value="${tension.toolId}"
 							th:text="${tension.toolType}"></option>
-				</select></td>
-				<td th:if="${#fields.hasErrors('tension')}" th:errors="*{tension}">Tension
-					Error</td>
+				</select>
 			</tr>
 			<tr>
 				<td>Bypass Tool:</td>

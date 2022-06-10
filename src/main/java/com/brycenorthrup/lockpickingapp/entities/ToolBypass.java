@@ -61,7 +61,7 @@ public class ToolBypass{
 
 	@Override
 	public String toString() {
-		return "The " + toolType + " is used for locks with " + lockVuln + " and works by " + toolUse;
+		return "The " + toolType + " is used for locks with " + lockVuln + " and works by " + toolUse + ".";
 	}
 
 }
