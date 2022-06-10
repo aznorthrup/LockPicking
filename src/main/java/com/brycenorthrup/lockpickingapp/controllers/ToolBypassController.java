@@ -31,10 +31,11 @@ public class ToolBypassController {
 			count++;
 		}
 		if (count==0) {
-			ToolBypass bypass1 = new ToolBypass("Breaker Bar", "weak pin materials",
-					"breaking the pins in half at the shear line");
-			ToolBypass bypass2 = new ToolBypass("Bump Key", "generally similar keyways", "repeatedly pushing in and turning with slight force");
-			ToolBypass bypass3 = new ToolBypass("Bypass Hook", "openings in the back of the keyway adjascent to the shackle lock",
+			logger.info("Added initial batch of bypass tools.");
+			ToolBypass bypass1 = new ToolBypass("Cylinder Snapping", "weak cylinder materials",
+					"breaking the cylinder or pins in half with a wrench");
+			ToolBypass bypass2 = new ToolBypass("Bump Key", "generally similar keyways", "bumping in and turning with slight force");
+			ToolBypass bypass3 = new ToolBypass("Bypass Cam Turner", "openings in the back of the keyway adjascent to the shackle lock",
 					"twisting towards the bottom of the keyway, releasing the shackle lock");
 			ToolBypass bypass4 = new ToolBypass("Bypass Knife", "unguarded shackle release",
 					"pushing to the back of the keyway and pulling down towards the pins");
@@ -52,6 +53,30 @@ public class ToolBypassController {
 					"melting the lock body or shackle");
 			ToolBypass bypass12 = new ToolBypass("Warded Pick", "older warded locks",
 					"using it like a normal key");
+			bypass1.setVideoLink("-6LKXTy83Hk");
+			bypass2.setVideoLink("w0CIlwSxsvU");
+			bypass3.setVideoLink("9Pu4G32_N1Y");
+			bypass4.setVideoLink("56ljZwORoOI");
+			bypass5.setVideoLink("0ggVZLNr6N4");
+			bypass6.setVideoLink("A5lTLbcD3cI");
+			bypass7.setVideoLink("nVV-YL9po2U");
+			bypass8.setVideoLink("4GQbCjo0Zdg");
+			bypass9.setVideoLink("KaKZ1Rw91nM");
+			bypass10.setVideoLink("PC-1S4cHUPs");
+			bypass11.setVideoLink("1eVoU4Qml9E");
+			bypass12.setVideoLink("z9UIDzwBSeI");
+			bypass1.setStart(20);
+			bypass2.setStart(41);
+			bypass3.setStart(53);
+			bypass4.setStart(99);
+			bypass5.setStart(40);
+			bypass6.setStart(15);
+			bypass7.setStart(27);
+			bypass8.setStart(90);
+			bypass9.setStart(48);
+			bypass10.setStart(25);
+			bypass11.setStart(81);
+			bypass12.setStart(206);
 			bypassRepository.save(bypass1);
 			bypassRepository.save(bypass2);
 			bypassRepository.save(bypass3);

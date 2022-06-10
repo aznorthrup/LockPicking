@@ -36,7 +36,13 @@
 		<tr th:each="bypass:${bypass}">
 			<td th:text="${bypass.toString()}"></td>
 		</tr>
+		<tr class="spacer"></tr>
+		<tr>
+ 			<td><iframe style="margin: auto;" width="560" height="315"
+			th:src="@{https://www.youtube.com/embed/{url}(url=${bypass.getVideoLink()}, start=${bypass.getStart()})}"></iframe></td>
+		</tr>
 	</table>
+	<br>
 	<div class="center">
 		<form sec:authorize="hasRole('ROLE_ADMIN')"
 			th:action="@{/updateBypass/{id}(id=${bypass.toolId})}" method="GET">

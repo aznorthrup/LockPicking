@@ -6,10 +6,21 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-body {
+html {
+	height:100%;
 	background-color: rgb(60, 60, 60);
+}
+
+body {
+	width: 60%;
+	margin:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-top:10px;
+	min-height:100%;
+	background-color: rgb(40, 40, 40);
 	color: white;
-	text-align:center;
+	text-align: center;
 }
 
 h1, h3, h4, h5 {
@@ -49,8 +60,8 @@ li a:hover {
 	background-color: #111;
 }
 
-.username:hover{
-	background-color:#333;
+.username:hover {
+	background-color: #333;
 }
 
 .active {
@@ -102,7 +113,6 @@ td {
 	align-items: center;
 }
 
-
 .add-btn-form {
 	margin: auto;
 	width: 75%;
@@ -126,7 +136,7 @@ input:hover {
 }
 
 .add-btn {
-	margin-top:50%;
+	margin-top: 50%;
 	width: 100%;
 	height: 33%;
 	border: none;
@@ -137,4 +147,66 @@ input:hover {
 
 .add-btn:hover {
 	background-color: rgb(170, 50, 50);
+}
+
+.modal {
+	font-size:20px;
+	height: 50%;
+	margin: auto;
+	background-color: rgb(30, 30, 30);
+	border-radius: 20px;
+}
+
+.modal input{
+	width:100%;
+	padding-left:2%;
+	background-color:white;
+	color:black;
+	font-size:17px;
+}
+
+input.modal-submit-button {
+	margin-bottom:5px;
+	width: 100%;
+	height: 33%;
+	border: none;
+	color: white;
+	font-size: 18px;
+	background-color: rgb(170, 50, 50, 75%);
+	border-radius: 20px;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.modal-submit-button:hover {
+	background-color: rgb(170, 50, 50);
+}
+
+.modal-select {
+	width: 100%;
+	height: auto;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.modal-open{
+	background-color: rgb(170, 50, 50, 75%);
+}
+
+.modal-open a{
+	display:block;
+	text-decoration:none;
+	color:white;
+}
+
+.modal-open:hover{
+	background-color:rgb(170, 50, 50)
+}
+
+fieldset{
+	border:none;
+}
+
+fieldset input{
+	box-shadow:none;
 }

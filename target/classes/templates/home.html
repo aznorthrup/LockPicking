@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <link rel="stylesheet" href="/css/styles.css">
 <title>Lock Box</title>
 </head>
@@ -22,8 +25,7 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
-						
-						
+
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
 
@@ -51,5 +53,146 @@
 			src="https://www.youtube.com/embed/v87wDYyOZPY?start=10"
 			title="How a pin tumber lock works"></iframe>
 	</div>
+	<br>
+	<div style="width: 50%; margin: auto;">
+		<h1>Have a request?</h1>
+		<h3 class="modal-open">
+			<a href="#ex1" rel="modal:open">Let us know!</a>
+		</h3>
+	</div>
+	<div id="ex1" class="modal">
+		<form action="https://formsubmit.co/f1d9da07782069bbdf156ee67fa7c26c" name="contact-form" method="POST">
+			<h2>What is your request about?</h2>
+			
+			<div class="request-object">
+				<select name="request-object" id="request-object"
+					class="modal-select">
+					<option selected disabled>Choose an option</option>
+					<option value="lock">Lock</option>
+					<option value="pick">Pick</option>
+					<option value="tension">Tension</option>
+					<option value="bypass">Bypass</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<br>
+			<div class="lock-request" id="lock-request">
+			
+				<label for="lock-details">Tell us about your lock request:</label>
+					<br>
+					<input type="text" name="lock-info"> 
+					<br>
+					
+				<div id="picking-info">
+					<label>Picking tools (N/A if not applicable):</label><br>
+			 			<input name="pick-details"type="text">
+			 			<br>
+			 	</div>
+			
+				<div id="bypass-info">
+					<label>Bypass tools (N/A if not applicable):</label><br>
+						<input name="bypass-details" type="text">
+						<br>
+				</div>
+			
+			</div>
+			
+			<div class="pick-request" id="pick-request">
+				<label for="pick-details">Tell us about you pick request:</label><br>
+				<input type="text" name="pick-info">
+				<br>
+				
+			</div>
+			
+			<div class="tension-request" id="tension-request">
+				<label for="tension-details">Tell us about you tension request:</label><br>
+				<input type="text" name="tension-info">
+				<br>
+			</div>
+				
+			<div class="bypass-request" id="bypass-request">
+				<label for="bypass-details">Tell us about your bypass request:</label><br>
+				<input type="text" name="bypass-info">
+				<br>
+			</div>
+			
+			<div class="other-request" id="other-request">
+				<label for="other-details">Tell us more about this request:</label><br>
+				<input type="text" name="other-info"> 
+				<br>
+				<br>
+				<br> 
+			</div>
+			<br>
+			<input type="button" onclick="submitForm()" class="modal-submit-button" value="Submit" />
+		</form>
+	</div>
+	<br><br><br><br><br><br>
+	<script>
+	
+	function submitForm() {
+		var modal = document.getElementById("ex1")
+		   var frm = document.getElementsByName('contact-form')[0];
+		   frm.submit();
+		   modal.close();
+		   return false;
+		}
+	
+	$('#lock-request').hide();
+	$('#pick-request').hide();
+	$('#tension-request').hide();
+	$('#bypass-request').hide();
+	$('#other-request').hide();
+	
+	$("#request-object").change(function () {
+        var type = $( "#request-object option:selected" ).val();
+        if(type=="lock")
+        {
+
+        	$('#pick-request').hide();
+        	$('#tension-request').hide();
+        	$('#bypass-request').hide();
+        	$('#other-request').hide();
+           	$("#lock-request").show();
+           	
+        }
+        else if(type=="pick")
+        {
+        	$('#lock-request').hide();
+        	$('#tension-request').hide();
+        	$('#bypass-request').hide();
+        	$('#other-request').hide();
+        	$("#pick-request").show();
+        }
+        else if(type=="tension")
+        {
+        	$('#lock-request').hide();
+        	$('#pick-request').hide();
+        	$('#bypass-request').hide();
+        	$('#other-request').hide();
+        	$("#tension-request").show();
+        }
+        else if(type=="bypass")
+        {
+        	$('#lock-request').hide();
+        	$('#pick-request').hide();
+        	$('#tension-request').hide();
+        	$('#other-request').hide();
+        	$("#bypass-request").show();
+        }
+        else if(type=="other")
+        {
+        	$('#lock-request').hide();
+        	$('#pick-request').hide();
+        	$('#tension-request').hide();
+        	$('#bypass-request').hide();
+        	$("#other-request").show();
+        }
+    });
+	</script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 </html>

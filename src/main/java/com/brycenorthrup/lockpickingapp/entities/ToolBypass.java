@@ -14,6 +14,8 @@ public class ToolBypass{
 	private String toolType;
 	private String toolUse;
 	private String lockVuln;
+	private String videoLink;
+	private int start;
 	
 	public ToolBypass(){}
 	
@@ -23,6 +25,22 @@ public class ToolBypass{
 		this.lockVuln = lockVuln;
 	}
 	
+	public int getStart() {
+		return start;
+	}
+
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+	public String getVideoLink() {
+		return videoLink;
+	}
+
+	public void setVideoLink(String videoLink) {
+		this.videoLink = videoLink;
+	}
+
 	public int getToolId() {
 		return toolId;
 	}

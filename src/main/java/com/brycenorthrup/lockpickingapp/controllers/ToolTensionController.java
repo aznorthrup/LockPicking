@@ -31,6 +31,7 @@ public class ToolTensionController {
 			count++;
 		}
 		if (count==0) {
+			logger.info("Added initial batch of tension tools.");
 			ToolTension tension1 = new ToolTension("Mantis", "all forms of", "cylindrical");
 			ToolTension tension2 = new ToolTension("Spring", "bottom of the keyway",
 					"precisely aligned cylinders and narrow");

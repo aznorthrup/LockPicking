@@ -32,6 +32,7 @@ public class ToolPickController {
 			count++;
 		}
 		if (count==0) {
+			logger.info("Added initial batch of picks.");
 			ToolPick pick1 = new ToolPick("Deep hook", "large");
 			ToolPick pick2 = new ToolPick("Dimple pick", "dimpled/smiley");
 			ToolPick pick3 = new ToolPick("Gem", "zipping or picking most");
