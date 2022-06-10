@@ -43,7 +43,7 @@
 		</tr>
 	</table>
 	<div class="center">
-		<form sec:authorize="hasRole('ADMIN')" th:action="@{/addBypass}"
+		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addBypass}"
 			method="GET">
 			<input type="submit" value="Add Bypass Tool">
 		</form>
