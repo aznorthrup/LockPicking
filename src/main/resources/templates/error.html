@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+<link rel="stylesheet" href="/css/styles.css" />
+<title>Locks</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+				<li style="float: right;"><a class="nav-link"
+					th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<h1 style="margin:auto;margin-top:20%;width:50%;font-size:75px;">Either this page does not exist, or <span style="color:rgb(170, 50, 50, 75%)">you do not have the authority to view it...</span>cheeky!</h1>
+
+</body>
+
+</html>

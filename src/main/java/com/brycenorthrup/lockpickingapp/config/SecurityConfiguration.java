@@ -20,12 +20,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
+
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
@@ -33,39 +33,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth.setPasswordEncoder(passwordEncoder());
 		return auth;
 	}
-	
+
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(authenticationProvider());
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers(
-				"/registration**", 
-				"/js/**", 
-				"/css/**", 
-				"/img/**", 
-				"/resources/**", 
-				"/static/**",
-				"/fonts/**")
-		.permitAll()
-		.anyRequest()
-		.authenticated()
-		.and()
-		.formLogin()
-		.loginPage("/login")
-		.permitAll()
-		.and()
-		.logout()
-		.and()
-		.logout()
-		.invalidateHttpSession(true)
-		.clearAuthentication(true)
-		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-		.logoutSuccessUrl("/login?logout")
-		.permitAll();
+				.antMatchers("/addLock", "/addPick", "/addTension", "/addBypass", "/updateLock/**", "/updatePick/**",
+						"/updateTension/**", "/updateBypass/**", "/deleteLock/**", "/deletePick/**",
+						"/deleteTension/**", "/deleteBypass/**")
+				.hasAnyAuthority("ROLE_ADMIN")
+				.antMatchers("/registration**", "/js/**", "/css/**", "/img/**", "/resources/**", "/static/**",
+						"/fonts/**")
+				.permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and()
+				.logout().invalidateHttpSession(true).clearAuthentication(true)
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout")
+				.permitAll();
 	}
-	
+
 }

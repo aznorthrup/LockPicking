@@ -10,4 +10,10 @@ public class MainController {
 	public String login() {
 		return "login.html";
 	}
+	
+	@GetMapping("/error")
+	public String error() {
+		return "error.html";
+	}
+	
 }

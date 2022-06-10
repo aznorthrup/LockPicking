@@ -150,19 +150,33 @@ input:hover {
 }
 
 .modal {
+	padding:2%;
 	font-size:20px;
-	height: 50%;
+	height: 55%;
 	margin: auto;
 	background-color: rgb(30, 30, 30);
 	border-radius: 20px;
 }
 
+.modal label{
+	margin:5px;
+}
+
 .modal input{
+	height:20px;
 	width:100%;
 	padding-left:2%;
 	background-color:white;
 	color:black;
 	font-size:17px;
+	margin:10px;
+	position:relative;
+	right:10px;
+}
+
+.modal a.close-modal{
+	top:5px;
+	right:5px;
 }
 
 input.modal-submit-button {
