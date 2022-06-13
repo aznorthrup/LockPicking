@@ -38,8 +38,15 @@ public class LockClass {
 	@NotFound(action = NotFoundAction.IGNORE)
 	@Nullable
 	private ToolBypass bestBypass;
+	private String image;
 
 	public LockClass() {
+	}
+	
+	public LockClass(String brand, String model, String material) {
+		this.brand = brand;
+		this.model = model;
+		this.material = material;
 	}
 
 	public LockClass(int lockId, String brand, String model, String material) {
@@ -47,6 +54,14 @@ public class LockClass {
 		this.brand = brand;
 		this.model = model;
 		this.material = material;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getLockId() {

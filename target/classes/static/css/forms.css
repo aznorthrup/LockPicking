@@ -7,8 +7,15 @@
 }
 
 body {
+	min-height:100%;
 	background-color: rgb(60, 60, 60);
 	color: white;
+}
+
+h1 {
+	background-color: rgb(170, 50, 50, 75%);
+	box-shadow: 5px 5px 5px black;
+	border-radius: 20px;
 }
 
 ul {
@@ -53,8 +60,10 @@ li a:hover {
 }
 
 table {
+	min-height: 100%; 
+	width: 75%;
 	margin: auto;
-	margin-top: 10%;
+	margin-top: 5%;
 	padding: 3rem;
 	background-color: rgb(30, 30, 30, 75%);
 	box-shadow: 5px 5px 5px black;
@@ -123,4 +132,10 @@ button:hover {
 
 .spacer {
 	height: 15px;
+}
+
+img {
+	display: block;
+	width: 50%;
+	border-radius: 20px;
 }

@@ -46,10 +46,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 						"/updateTension/**", "/updateBypass/**", "/deleteLock/**", "/deletePick/**",
 						"/deleteTension/**", "/deleteBypass/**")
 				.hasAnyAuthority("ROLE_ADMIN")
-				.antMatchers("/registration**", "/js/**", "/css/**", "/img/**", "/resources/**", "/static/**",
-						"/fonts/**")
-				.permitAll().anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and()
-				.logout().invalidateHttpSession(true).clearAuthentication(true)
+				.antMatchers("/oauth/authorize**", "/error**", "/login/**", "/registration**", "/js/**", "/css/**",
+						"/img/**", "/resources/**", "/static/**", "/fonts/**")
+				.permitAll().anyRequest().authenticated().and()
+				.formLogin().loginPage("/login").permitAll().and().logout()
+				.invalidateHttpSession(true).clearAuthentication(true)
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout")
 				.permitAll();
 	}

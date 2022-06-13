@@ -33,9 +33,14 @@
 		</div>
 	</nav>
 
+	<div id="center">
+		<h1 style="font-size: 50px;">Locks</h1>
+	</div>
+
 	<table>
 		<tr th:each="locks:${locks}">
 			<td th:text="${locks.toShortString()}"></td>
+			<td><img th:src="@{/img/lock/{img}(img=${locks.image})}"></td>
 			<td><form class="add-btn-form"
 					th:action="@{/allLocks/{id}(id=${locks.lockId})}" method="GET">
 					<input class="add-btn" type="submit" value="See More" />
@@ -48,7 +53,12 @@
 			<input type="submit" value="Add Lock" />
 		</form>
 	</div>
-	<br><br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
 
 </html>

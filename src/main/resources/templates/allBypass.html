@@ -33,9 +33,16 @@
 		</div>
 	</nav>
 
+	<div id="center">
+		<h1 style="font-size: 50px;">Bypass Tools</h1>
+		<br>
+		<h3>(Click on each block to see how they work)</h3>
+	</div>
+
 	<table>
 		<tr th:each="bypass:${bypass}">
 			<td colspan="3" th:text="${bypass.toShortString()}"></td>
+			<td><img th:src="@{/img/bypass/{img}(img=${bypass.image})}"></td>
 			<td><form class="add-btn-form"
 					th:action="@{/allBypass/{id}(id=${bypass.toolId})}" method="GET">
 					<input class="add-btn" type="submit" value="See More" />
@@ -48,7 +55,12 @@
 			<input type="submit" value="Add Bypass Tool">
 		</form>
 	</div>
-	<br><br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 </body>
 
 </html>

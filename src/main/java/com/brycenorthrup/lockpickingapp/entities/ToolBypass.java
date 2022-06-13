@@ -16,6 +16,7 @@ public class ToolBypass{
 	private String lockVuln;
 	private String videoLink;
 	private int start;
+	private String image;
 	
 	public ToolBypass(){}
 	
@@ -25,6 +26,14 @@ public class ToolBypass{
 		this.lockVuln = lockVuln;
 	}
 	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	public int getStart() {
 		return start;
 	}

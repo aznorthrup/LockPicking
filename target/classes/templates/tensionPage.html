@@ -32,9 +32,15 @@
 			</ul>
 		</div>
 	</nav>
+	
 	<table>
+	<tr><td><h1 th:text="${tension.getToolType()}"></h1><td></tr>
 		<tr th:each="tension:${tension}">
 			<td th:text="${tension.toString()}"></td>
+		</tr>
+		<tr class="spacer"></tr>
+		<tr>
+			<td align="center"><img th:src="@{/img/tension/{img}(img=${tension.image})}"></td>
 		</tr>
 	</table>
 	<div class="center">

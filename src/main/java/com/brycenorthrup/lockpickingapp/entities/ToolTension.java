@@ -14,6 +14,7 @@ public class ToolTension{
 	private String toolType;
 	private String tensionType;
 	private String toolUse;
+	private String image;
 	
 	public ToolTension() {}
 	
@@ -21,6 +22,14 @@ public class ToolTension{
 		this.toolType = toolType;
 		this.tensionType = tensionType;
 		this.toolUse = toolUse;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getToolId() {

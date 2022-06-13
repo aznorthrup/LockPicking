@@ -35,8 +35,13 @@
 		</div>
 	</nav>
 	<table>
+			<tr><td><h1 th:text="${pick.getToolType()}"></h1><td></tr>
 		<tr th:each="pick:${pick}">
 			<td th:text="${pick.toString()}"></td>
+		</tr>
+		<tr class="spacer"></tr>
+		<tr>
+			<td align="center"><img th:src="@{/img/pick/{img}(img=${pick.image})}"></td>
 		</tr>
 	</table>
 	<div class="center">

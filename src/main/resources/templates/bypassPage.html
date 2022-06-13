@@ -32,7 +32,9 @@
 			</ul>
 		</div>
 	</nav>
+	
 	<table>
+	<tr><td><h1 th:text="${bypass.getToolType()}"></h1><td></tr>
 		<tr th:each="bypass:${bypass}">
 			<td th:text="${bypass.toString()}"></td>
 		</tr>

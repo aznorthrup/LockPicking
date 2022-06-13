@@ -34,25 +34,37 @@ public class ToolBypassController {
 			logger.info("Added initial batch of bypass tools.");
 			ToolBypass bypass1 = new ToolBypass("Cylinder Snapping", "weak cylinder materials",
 					"breaking the cylinder or pins in half with a wrench");
+			bypass1.setImage("cylindersnapping.jpg");
 			ToolBypass bypass2 = new ToolBypass("Bump Key", "generally similar keyways", "bumping in and turning with slight force");
+			bypass2.setImage("bumpkey.jpg");
 			ToolBypass bypass3 = new ToolBypass("Bypass Cam Turner", "openings in the back of the keyway adjascent to the shackle lock",
 					"twisting towards the bottom of the keyway, releasing the shackle lock");
+			bypass3.setImage("camturner.jpg");
 			ToolBypass bypass4 = new ToolBypass("Bypass Knife", "unguarded shackle release",
 					"pushing to the back of the keyway and pulling down towards the pins");
+			bypass4.setImage("bypassknife.jpg");
 			ToolBypass bypass5 = new ToolBypass("Comb", "a loose fitting cylinder",
 					"pushing all pins past the cylinder");
+			bypass5.setImage("comb.jpg");
 			ToolBypass bypass6 = new ToolBypass("Common Key", "the same exact key (CH751, C415A, etc.)", "just using the key, this is surprisingly common");
+			bypass6.setImage("commonkey.jpg");
 			ToolBypass bypass7 = new ToolBypass("Pick Gun", "no security pins",
 					"violently striking the pins, much like a rake but slightly easier");
-			ToolBypass bypass8 = new ToolBypass("Rake", "no security pins",
+			bypass7.setImage("pickgun.jpg");
+			ToolBypass bypass8 = new ToolBypass("Raking", "no security pins",
 					"trying hundreds of pin combinations in seconds");
+			bypass8.setImage("rake.jpg");
 			ToolBypass bypass9 = new ToolBypass("Rocking", "simple or generic",
 					"rocking back and forth to adjust pins en masse");
+			bypass9.setImage("rock.jpg");
 			ToolBypass bypass10 = new ToolBypass("Shim", "spring loaded shackle release", "pushing the spring back");
+			bypass10.setImage("shim.jpg");
 			ToolBypass bypass11 = new ToolBypass("Torch", "poor material composition",
 					"melting the lock body or shackle");
+			bypass11.setImage("torch.jpg");
 			ToolBypass bypass12 = new ToolBypass("Warded Pick", "older warded locks",
 					"using it like a normal key");
+			bypass12.setImage("wardedpick.jpg");
 			bypass1.setVideoLink("-6LKXTy83Hk");
 			bypass2.setVideoLink("w0CIlwSxsvU");
 			bypass3.setVideoLink("9Pu4G32_N1Y");

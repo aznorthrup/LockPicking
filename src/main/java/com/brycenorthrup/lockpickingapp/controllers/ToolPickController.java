@@ -34,19 +34,23 @@ public class ToolPickController {
 		if (count==0) {
 			logger.info("Added initial batch of picks.");
 			ToolPick pick1 = new ToolPick("Deep hook", "large");
+			pick1.setImage("deephook.jpg");
 			ToolPick pick2 = new ToolPick("Dimple pick", "dimpled/smiley");
+			pick2.setImage("dimple.jpg");
 			ToolPick pick3 = new ToolPick("Gem", "zipping or picking most");
+			pick3.setImage("gem.jpg");
 			ToolPick pick4 = new ToolPick("Half diamond", "zipping most");
-			ToolPick pick5 = new ToolPick("Medium hook", "open");
-			ToolPick pick6 = new ToolPick("Offset hook", "complicated or hard to navigate");
-			ToolPick pick7 = new ToolPick("Short hook", "narrow");
+			pick4.setImage("halfdiamond.jpg");
+			ToolPick pick5 = new ToolPick("Offset hook", "complicated or hard to navigate");
+			pick5.setImage("offset.jpg");
+			ToolPick pick6 = new ToolPick("Short hook", "narrow");
+			pick6.setImage("shorthook.jpg");
 			pickRepository.save(pick1);
 			pickRepository.save(pick2);
 			pickRepository.save(pick3);
 			pickRepository.save(pick4);
 			pickRepository.save(pick5);
 			pickRepository.save(pick6);
-			pickRepository.save(pick7);
 		}
 		pick = pickRepository.findAll();
 		logger.info("Displayed all pick tools");

@@ -33,10 +33,14 @@ public class ToolTensionController {
 		if (count==0) {
 			logger.info("Added initial batch of tension tools.");
 			ToolTension tension1 = new ToolTension("Mantis", "all forms of", "cylindrical");
+			tension1.setImage("mantis.jpg");
 			ToolTension tension2 = new ToolTension("Spring", "bottom of the keyway",
 					"precisely aligned cylinders and narrow");
+			tension2.setImage("spring.jpg");
 			ToolTension tension3 = new ToolTension("Z-Bar", "bottom of the keyway", "simple and flush");
+			tension3.setImage("zbar.jpg");
 			ToolTension tension4 = new ToolTension("Z-Bar TOK", "top of the keyway", "guarded and complex ");
+			tension4.setImage("zbartok.jpg");
 			tensionRepository.save(tension1);
 			tensionRepository.save(tension2);
 			tensionRepository.save(tension3);

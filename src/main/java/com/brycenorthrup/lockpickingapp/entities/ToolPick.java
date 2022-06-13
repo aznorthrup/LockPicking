@@ -12,12 +12,21 @@ public class ToolPick{
 	private int toolId;
 	private String toolType;
 	private String toolUse;
+	private String image;
 	
 	public ToolPick() {}
 	
 	public ToolPick(String toolType, String toolUse) {
 		this.toolType = toolType;
 		this.toolUse = toolUse;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getToolId() {
