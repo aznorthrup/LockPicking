@@ -77,10 +77,12 @@ span {
 }
 
 input {
-	padding-left:1%;
+	margin-left:10%;
+	margin:5%;
+	width:88%;
+	padding-left:2%;
 	height:100%;
 	border-radius: 20px;
-	text-align:center;
 	font-size:20px;
 }
 

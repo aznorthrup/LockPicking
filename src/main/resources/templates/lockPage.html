@@ -33,8 +33,17 @@
 		</div>
 	</nav>
 	<table>
+	<tr><td><h1 th:text="${lock.toShortString()}"></h1><td></tr>
 		<tr th:each="lock:${lock}">
 			<td th:text="${lock.toString()}"></td>
+		</tr>
+		<tr>
+			<td align="center"><div style="display:flex;justify-content:space-between;"><img style="width:30%;" th:src="@{/img/pick/{img}(img=${lock.getPick().image})}"><br>
+			<img style="width:30%;" th:src="@{/img/tension/{img}(img=${lock.getTension().image})}"><br>
+			<img style="width:30%;" th:src="@{/img/bypass/{img}(img=${lock.getBestBypass().image})}"></div></td>
+		</tr>
+		<tr>
+			<td align="center"><img style="width:30%;" th:src="@{/img/lock/{img}(img=${lock.image})}"></td>
 		</tr>
 	</table>
 	<div class="center">
