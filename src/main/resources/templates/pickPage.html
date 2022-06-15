@@ -41,7 +41,7 @@
 		</tr>
 		<tr class="spacer"></tr>
 		<tr>
-			<td align="center"><img th:src="@{/img/pick/{img}(img=${pick.image})}"></td>
+			<td align="center"><img th:src="@{{img}(img=${pick.image})}" onerror="this.style.display='none'"></td>
 		</tr>
 	</table>
 	<div class="center">

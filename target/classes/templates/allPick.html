@@ -36,12 +36,13 @@
 	
 	<div id="center">
 		<h1 style="font-size: 50px;">Lock Picks</h1>
+		<h2 th:text = "${pickCount} + ' ' + 'picks listed so far'"></h2>
 	</div>
 
 	<table>
 		<tr th:each="pick:${pick}">
 			<td th:text="${pick.toShortString()}"></td>
-			<td><img th:src="@{/img/pick/{img}(img=${pick.image})}"></td>
+			<td><img th:src="@{{img}(img=${pick.image})}" onerror="this.style.display='none'"></td>
 			<td><form class="add-btn-form"
 					th:action="@{/allPick/{id}(id=${pick.toolId})}" method="GET">
 					<input class="add-btn" type="submit" value="See More" />
@@ -54,6 +55,7 @@
 			<input type="submit" value="Add Pick">
 		</form>
 	</div>
+	<br>
 	<div style="width:50%;margin:auto;">
 		<h3>How picking works:</h3>
 		<br>

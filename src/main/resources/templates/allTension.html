@@ -35,12 +35,13 @@
 
 	<div id="center">
 		<h1 style="font-size: 50px;">Tension Tools</h1>
+		<h2 th:text = "${tensionCount} + ' ' + 'tension tools listed so far'"></h2>
 	</div>
 
 	<table>
 		<tr th:each="tension:${tension}">
 			<td th:text="${tension.toShortString()}"></td>
-			<td><img th:src="@{/img/tension/{img}(img=${tension.image})}"></td>
+			<td><img th:src="@{{img}(img=${tension.image})}" onerror="this.style.display='none'"></td>
 			<td><form class="add-btn-form"
 					th:action="@{/allTension/{id}(id=${tension.toolId})}" method="GET">
 					<input class="add-btn" type="submit" value="See More" />
@@ -53,6 +54,7 @@
 			<input type="submit" value="Add Tension Tool">
 		</form>
 	</div>
+	<br>
 	<div style="width:50%;margin:auto;">
 		<h3>The basics of tension:</h3>
 		<br>

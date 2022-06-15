@@ -2,16 +2,36 @@ package com.brycenorthrup.lockpickingapp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.brycenorthrup.lockpickingapp.entities.LockClass;
 import com.brycenorthrup.lockpickingapp.entities.ToolBypass;
 import com.brycenorthrup.lockpickingapp.entities.ToolPick;
 import com.brycenorthrup.lockpickingapp.entities.ToolTension;
+import com.brycenorthrup.lockpickingapp.repositories.LockClassRepository;
+import com.brycenorthrup.lockpickingapp.repositories.ToolBypassRepository;
+import com.brycenorthrup.lockpickingapp.repositories.ToolPickRepository;
+import com.brycenorthrup.lockpickingapp.repositories.ToolTensionRepository;
 
 @SpringBootTest
 class LockpickingappApplicationTests {
+	
+	@Autowired
+	private ToolPickRepository pickRepo;
+	
+	@Autowired
+	private ToolTensionRepository tensionRepo;
+	
+	@Autowired
+	private ToolBypassRepository bypassRepo;
+	
+	@Autowired
+	private LockClassRepository lockRepo;
+	
 	
 	@Test
 	void contextLoads() {
@@ -55,6 +75,46 @@ class LockpickingappApplicationTests {
 		assertEquals(testPick.getToolId(),lock.getPick().getToolId());
 		assertEquals(testTension.getToolId(),lock.getTension().getToolId());
 		assertEquals(testBypass.getToolId(),lock.getBestBypass().getToolId());
+	}
+	
+	@Test
+	void checkPickCount() {
+		List<ToolPick> picks = (List<ToolPick>) pickRepo.findAll();
+		int count=0;
+		for (int i = 0;i<picks.size();i++) {
+			count++;
+		}
+		assertEquals(count, pickRepo.countPicks());
+	}
+	
+	@Test
+	void checkTensionCount() {
+		List<ToolTension> tension = (List<ToolTension>) tensionRepo.findAll();
+		int count=0;
+		for (int i = 0;i<tension.size();i++) {
+			count++;
+		}
+		assertEquals(count, tensionRepo.countTension());
+	}
+	
+	@Test
+	void checkBypassCount() {
+		List<ToolBypass> bypass = (List<ToolBypass>) bypassRepo.findAll();
+		int count=0;
+		for (int i = 0;i<bypass.size();i++) {
+			count++;
+		}
+		assertEquals(count, bypassRepo.countBypass());
+	}
+	
+	@Test
+	void checkLockCount() {
+		List<LockClass> locks = (List<LockClass>) lockRepo.findAll();
+		int count=0;
+		for (int i = 0;i<locks.size();i++) {
+			count++;
+		}
+		assertEquals(count, lockRepo.countLocks());
 	}
 
 }

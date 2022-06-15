@@ -13,9 +13,9 @@
 		<div class="container-fluid">
 			<ul class="nav navbar-nav">
 
-				<li><a class="nav-link, active" th:href="@{/}">Home</a></li>
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
 
-				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+				<li><a class="nav-link, active" th:href="@{/allLocks}">Locks</a></li>
 
 				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
 
@@ -40,13 +40,12 @@
 				<td><select th:field="*{brand}" required>
 						<option th:value="Abus">Abus</option>
 						<option th:value="Ace">Ace</option>
-						<option th:value="Desired-Tools">Desired-Tools</option>
+						<option th:value="American-Lock">American-Steel</option>
 						<option th:value="Kwikset">Kwikset</option>
 						<option th:value="Master">Master</option>
 						<option th:value="ORIA">ORIA</option>
-						<option th:value="Schlegg">Schlegg</option>
+						<option th:value="Schlage">Schlegg</option>
 						<option th:value="Stanley">Stanley</option>
-						<option th:value="Steel-Series">Steel-Series</option>
 				</select></td>
 				<td th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}">Brand
 					Error</td>
@@ -98,7 +97,14 @@
 					th:errors="*{bestBypass}">Bypass Error</td>
 			</tr>
 			<tr>
-				<td><button type="submit">Update</button></td>
+				<td>Lock image:</td><td><input id="newPicUrl"
+					type="text" th:field="*{image}"
+					placeholder="https://xyz.com/zyx.jpg" /></td>
+					<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Image
+					Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
 			</tr>
 		</table>
 	</form>

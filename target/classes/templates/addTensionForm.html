@@ -48,6 +48,15 @@
 					tension for locks with <input type="text" th:field="*{toolUse}" />
 					keyways.
 				</td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr style="display: block;">
+				<td width="50%">Tension image: <input id="newPicUrl"
+					style="width: 46.5%;" type="text" th:field="*{image}"
+					placeholder="" /></td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr>
 				<td th:if="${#fields.hasErrors('toolType')}" th:errors="*{toolType}">Tool
 					Type Error</td>
 
@@ -56,9 +65,9 @@
 
 				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Tool
 					Use Error</td>
-			</tr>
-			<tr class="spacer"></tr>
-			<tr>
+					
+				<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Image
+					Error</td>
 				<td><button type="submit">Submit</button></td>
 			</tr>
 		</table>

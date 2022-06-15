@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.brycenorthrup.lockpickingapp.entities.ToolPick;
+import com.brycenorthrup.lockpickingapp.exceptions.PickException;
 import com.brycenorthrup.lockpickingapp.repositories.ToolPickRepository;
 
 @Controller
@@ -34,17 +35,17 @@ public class ToolPickController {
 		if (count==0) {
 			logger.info("Added initial batch of picks.");
 			ToolPick pick1 = new ToolPick("Deep hook", "large");
-			pick1.setImage("deephook.jpg");
+			pick1.setImage("/img/pick/deephook.jpg");
 			ToolPick pick2 = new ToolPick("Dimple pick", "dimpled/smiley");
-			pick2.setImage("dimple.jpg");
+			pick2.setImage("/img/pick/dimple.jpg");
 			ToolPick pick3 = new ToolPick("Gem", "zipping or picking most");
-			pick3.setImage("gem.jpg");
+			pick3.setImage("/img/pick/gem.jpg");
 			ToolPick pick4 = new ToolPick("Half diamond", "zipping most");
-			pick4.setImage("halfdiamond.jpg");
+			pick4.setImage("/img/pick/halfdiamond.jpg");
 			ToolPick pick5 = new ToolPick("Offset hook", "complicated or hard to navigate");
-			pick5.setImage("offset.jpg");
+			pick5.setImage("/img/pick/offset.jpg");
 			ToolPick pick6 = new ToolPick("Short hook", "narrow");
-			pick6.setImage("shorthook.jpg");
+			pick6.setImage("/img/pick/shorthook.jpg");
 			pickRepository.save(pick1);
 			pickRepository.save(pick2);
 			pickRepository.save(pick3);
@@ -55,13 +56,14 @@ public class ToolPickController {
 		pick = pickRepository.findAll();
 		logger.info("Displayed all pick tools");
 		model.addAttribute("pick", pick);
+		model.addAttribute("pickCount", pickRepository.countPicks());
 		return "allPick.html";
 	}
 
 	@GetMapping(path = "/allPick/{id}")
-	public String getPickById(@PathVariable int id, Model model) {
+	public String getPickById(@PathVariable int id, Model model) throws PickException{
 		ToolPick pick = pickRepository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Invalid pick id: " + id));
+				.orElseThrow(() -> new PickException("Invalid pick id: " + id));
 		logger.info("Displayed picking tool with id: " + id);
 		model.addAttribute("pick", pick);
 		return "pickPage.html";
@@ -74,7 +76,7 @@ public class ToolPickController {
 	}
 
 	@PostMapping(path = "/addPick")
-	public String checkPick(@Valid ToolPick pick, BindingResult bind) {
+	public String checkPick(@Valid ToolPick pick, BindingResult bind){
 		if (bind.hasErrors()) {
 			logger.info("Failed to create new picking tool.");
 			return "addPickForm.html";
@@ -86,9 +88,9 @@ public class ToolPickController {
 	}
 
 	@GetMapping("/updatePick/{id}")
-	public String editPick(@PathVariable("id") int id, Model model) {
+	public String editPick(@PathVariable("id") int id, Model model) throws PickException{
 		ToolPick pick = pickRepository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Invalid pick id: " + id));
+				.orElseThrow(() -> new PickException("Invalid pick id: " + id));
 		logger.info("Displayed update page for picking tool with id: " + id);
 		model.addAttribute("pick", pick);
 		return "updatePick.html";
@@ -109,9 +111,9 @@ public class ToolPickController {
 	}
 
 	@GetMapping("/deletePick/{id}")
-	public String deletePick(@PathVariable("id") int id, Model model) {
+	public String deletePick(@PathVariable("id") int id, Model model) throws PickException{
 		ToolPick pick = pickRepository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Invalid pick tool id: " + id));
+				.orElseThrow(() -> new PickException("Invalid pick id: " + id));
 		logger.info("Deleted pick tool with id: " + id);
 		pickRepository.delete(pick);
 		return "redirect:/allPick";

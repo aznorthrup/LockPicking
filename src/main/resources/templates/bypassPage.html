@@ -32,17 +32,26 @@
 			</ul>
 		</div>
 	</nav>
-	
+
 	<table>
-	<tr><td><h1 th:text="${bypass.getToolType()}"></h1><td></tr>
+		<tr>
+			<td><h1 th:text="${bypass.getToolType()}"></h1>
+			<td>
+		</tr>
 		<tr th:each="bypass:${bypass}">
 			<td th:text="${bypass.toString()}"></td>
 		</tr>
 		<tr class="spacer"></tr>
 		<tr>
- 			<td><iframe style="margin: auto;" width="560" height="315"
-			th:src="@{https://www.youtube.com/embed/{url}(url=${bypass.getVideoLink()}, start=${bypass.getStart()})}"></iframe></td>
+			<td><iframe id="video" style="margin: auto;" width="560"
+					height="315"
+					th:src="@{https://www.youtube.com/embed/{url}(url=${bypass.getVideoLink()}, start=${bypass.getStart()})}"></iframe></td>
 		</tr>
+		<tr class="spacer"></tr>
+		<tr>
+			<td align="center" id="picture"><img
+				th:src="@{{img}(img=${bypass.image})}"
+				onerror="this.style.display='none'"></td>
 	</table>
 	<br>
 	<div class="center">
@@ -57,6 +66,11 @@
 				value="Delete Bypass Tool" />
 		</form>
 	</div>
+	<script>
+		if (video.src == "https://www.youtube.com/embed/?start=0") {
+			video.style.display = "none"
+		}
+	</script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.brycenorthrup.lockpickingapp.entities.ToolTension;
+import com.brycenorthrup.lockpickingapp.exceptions.TensionException;
 import com.brycenorthrup.lockpickingapp.repositories.ToolTensionRepository;
 
 @Controller
@@ -33,14 +34,14 @@ public class ToolTensionController {
 		if (count==0) {
 			logger.info("Added initial batch of tension tools.");
 			ToolTension tension1 = new ToolTension("Mantis", "all forms of", "cylindrical");
-			tension1.setImage("mantis.jpg");
+			tension1.setImage("/img/tension/mantis.jpg");
 			ToolTension tension2 = new ToolTension("Spring", "bottom of the keyway",
 					"precisely aligned cylinders and narrow");
-			tension2.setImage("spring.jpg");
+			tension2.setImage("/img/tension/spring.jpg");
 			ToolTension tension3 = new ToolTension("Z-Bar", "bottom of the keyway", "simple and flush");
-			tension3.setImage("zbar.jpg");
+			tension3.setImage("/img/tension/zbar.jpg");
 			ToolTension tension4 = new ToolTension("Z-Bar TOK", "top of the keyway", "guarded and complex ");
-			tension4.setImage("zbartok.jpg");
+			tension4.setImage("/img/tension/zbartok.jpg");
 			tensionRepository.save(tension1);
 			tensionRepository.save(tension2);
 			tensionRepository.save(tension3);
@@ -49,12 +50,13 @@ public class ToolTensionController {
 		tension = tensionRepository.findAll();
 		logger.info("Displayed all tension tools");
 		model.addAttribute("tension", tension);
+		model.addAttribute("tensionCount", tensionRepository.countTension());
 		return "allTension.html";
 	}
 	
 	@GetMapping(path="/allTension/{id}")
-	public String getTensionById(@PathVariable int id, Model model) {
-		ToolTension tension = tensionRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Invalid tension id: " + id));
+	public String getTensionById(@PathVariable int id, Model model) throws TensionException{
+		ToolTension tension = tensionRepository.findById(id).orElseThrow(()-> new TensionException("Invalid tension id: " + id));
 		logger.info("Displayed tension tool with id: " + id);
 		model.addAttribute("tension", tension);
 		return "tensionPage.html";
@@ -79,8 +81,8 @@ public class ToolTensionController {
 	}
 	
 	@GetMapping("/updateTension/{id}")
-	public String editTension(@PathVariable("id") int id, Model model) {
-		ToolTension tension = tensionRepository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid tension id: " + id));
+	public String editTension(@PathVariable("id") int id, Model model) throws TensionException{
+		ToolTension tension = tensionRepository.findById(id).orElseThrow(()->new TensionException("Invalid tension id: " + id));
 		logger.info("Displayed update page for tension tool with id: " + id);
 		model.addAttribute("tension", tension);
 		return "updateTension.html";
@@ -101,8 +103,8 @@ public class ToolTensionController {
 	}
 
 	@GetMapping("/deleteTension/{id}")
-	public String deleteTension(@PathVariable("id") int id, Model model) {
-		ToolTension tension = tensionRepository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid tension tool id: " + id));
+	public String deleteTension(@PathVariable("id") int id, Model model) throws TensionException{
+		ToolTension tension = tensionRepository.findById(id).orElseThrow(()->new TensionException("Invalid tension tool id: " + id));
 		logger.info("Deleted tension tool with id: " + id);
 		tensionRepository.delete(tension);
 		return "redirect:/allTension";

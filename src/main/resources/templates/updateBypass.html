@@ -60,9 +60,35 @@
 					Use Error</td>
 			</tr>
 			<tr class="spacer"></tr>
+			<tr style="display: block;">
+				<td width="50%">Technique video: <input id="newVidUrl"
+					style="width: 46.5%;" type="text" th:field="*{videoLink}"
+					placeholder="https://www.youtube.com/watch?v=3xampl3" /> <input
+					style="width: 10rem; float: right; margin-left: 25px;"
+					type="submit" value="Format" onclick="formatVid()" /></td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr style="display: block;">
+				<td style="width: 19%;"></td>
+				<td>When does the video start?</td>
+				<td><input type="number" value=0 th:field="*{start}" /></td>
+			</tr>
+			<tr class="spacer"></tr>
+			<tr style="display: block;">
+				<td width="50%">Bypass image: <input id="newPicUrl"
+					style="width: 46.5%;" type="text" th:field="*{image}"
+					placeholder="https://xyz.com/zyx.jpg" /></td>
+			</tr>
 			<tr>
+				<td th:if="${#fields.hasErrors('videoLink')}"
+					th:errors="*{videoLink}">Video Link Error</td>
+				<td th:if="${#fields.hasErrors('start')}" th:errors="*{start}">Video
+					Start Error</td>
+				<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Image
+					Error</td>
 				<td><button type="submit">Submit</button></td>
 			</tr>
+			<tr class="spacer"></tr>
 		</table>
 	</form>
 </body>
