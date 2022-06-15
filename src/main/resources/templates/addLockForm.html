@@ -98,7 +98,7 @@
 			</tr>
 			<tr>
 				<td>Lock image:</td><td><input id="newPicUrl"
-					type="text" th:field="*{image}"
+					type="text" name="image" value="https://iheartcraftythings.com/wp-content/uploads/2021/10/6-131.jpg"
 					placeholder="https://xyz.com/zyx.jpg" /></td>
 					<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Image
 					Error</td>

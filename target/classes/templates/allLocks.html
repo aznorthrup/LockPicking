@@ -35,25 +35,30 @@
 
 	<div id="center">
 		<h1 style="font-size: 50px;">Locks</h1>
-			<h2 th:text = "${lockCount} + ' ' + 'locks listed so far'"></h2>
+		<h2 th:text="${lockCount} + ' ' + 'locks listed so far'"></h2>
+		<br>
+		<h3>(Click on each block to see how they work)</h3>
 	</div>
 
-	<table>
-		<tr th:each="locks:${locks}">
-			<td th:text="${locks.toShortString()}"></td>
-			<td><img th:src="@{{img}(img=${locks.image})}" onerror="this.style.display='none'"></td>
-			<td><form class="add-btn-form"
-					th:action="@{/allLocks/{id}(id=${locks.lockId})}" method="GET">
-					<input class="add-btn" type="submit" value="See More" />
-				</form></td>
-		</tr>
-	</table>
 	<div class="center">
 		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addLock}"
 			method="GET">
 			<input type="submit" value="Add Lock" />
 		</form>
 	</div>
+
+	<table>
+		<tr th:each="locks:${locks}">
+			<td th:text="${locks.toShortString()}"></td>
+			<td><img th:src="@{{img}(img=${locks.image})}"
+				onerror="this.style.display='none'"></td>
+			<td><form class="add-btn-form"
+					th:action="@{/allLocks/{id}(id=${locks.lockId})}" method="GET">
+					<input class="add-btn" type="submit" value="See More" />
+				</form></td>
+		</tr>
+	</table>
+
 	<br>
 	<br>
 	<br>

@@ -2,11 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <link rel="stylesheet" href="/css/styles.css">
 <title>Lock Box</title>
+<style>
+h3 {
+	width: 50%;
+	margin: auto;
+}
+div{
+text-align:center;
+width:100%;
+}
+</style>
 </head>
 <body>
 	<nav th:fragment="navbar"
@@ -35,10 +46,10 @@
 			</ul>
 		</div>
 	</nav>
-	<div id="center">
+	<div id="center" style="width: 75%;">
 		<h1 style="font-size: 50px;">Welcome to the lock box!</h1>
 		<br>
-		<h3>
+		<h3 style="width:100%;">
 			<span style="color: rgb(170, 50, 50)"> Security by obscurity:</span><br>
 			<br>The long-standing delusion that as long as nobody truly
 			knows how a lock works, they won't know how to get past it. In an era
@@ -47,25 +58,47 @@
 			take my word for it. Why not see for yourself?
 		</h3>
 		<br>
-		<h3>To get us started, here is how a pin-tumbler lock works:</h3>
+		<h3>To get us started, here is
+			how a pin-tumbler lock works:</h3>
 		<br>
-		<div style="text-align:center;width:100%;">
-		<iframe style="width:100%;aspect-ratio:16/9" width="560" height="315"
-			src="https://www.youtube.com/embed/v87wDYyOZPY?start=10"
-			title="How a pin tumber lock works"></iframe>
-			</div>
+		<div>
+			<iframe style="width: 75%; aspect-ratio: 16/9" width="560"
+				height="315"
+				src="https://www.youtube.com/embed/v87wDYyOZPY?start=10"
+				title="How a pin tumber lock works"></iframe>
+		</div>
+		<br>
+		<div>
+			<h3>How picking works:</h3>
+			<br>
+			<iframe style="width: 75%; aspect-ratio: 16/9" width="560"
+				height="315"
+				src="https://www.youtube.com/embed/TjRj69P5rKM?start=35"
+				title="How a pin tumber lock works"></iframe>
+		</div>
+		<br>
+		<div>
+			<h3>The basics of tension:</h3>
+			<br>
+			<iframe style="width: 75%; aspect-ratio: 16/9" width="560"
+				height="315"
+				src="https://www.youtube.com/embed/W-K_dY44_wY?start=75"
+				title="How a pin tumber lock works"></iframe>
+		</div>
 	</div>
 	<br>
-	<div style="width: 50%; margin: auto;">
+	<div>
 		<h3>Have a request?</h3>
+		<br>
 		<h3 class="modal-open">
-			<a href="#ex1" rel="modal:open">Let us know!</a>
+			<a href="#ex1" rel="modal:open">Click here to let us know!</a>
 		</h3>
 	</div>
 	<div id="ex1" class="modal">
-		<form action="https://formsubmit.co/f1d9da07782069bbdf156ee67fa7c26c" name="contact-form" method="POST">
+		<form action="https://formsubmit.co/f1d9da07782069bbdf156ee67fa7c26c"
+			name="contact-form" method="POST">
 			<h2>What is your request about?</h2>
-			
+
 			<div class="request-object">
 				<select name="request-object" id="request-object"
 					class="modal-select">
@@ -79,118 +112,103 @@
 			</div>
 			<br>
 			<div class="lock-request" id="lock-request">
-			
-				<label for="lock-details">Tell us about your lock request:</label>
-					<br>
-					<input type="text" name="lock-info"> 
-					<br>
-					
+
+				<label for="lock-details">Tell us about your lock request:</label> <br>
+				<input type="text" name="lock-info"> <br>
+
 				<div id="picking-info">
-					<label>Picking tools (N/A if not applicable):</label><br>
-			 			<input name="pick-details"type="text">
-			 			<br>
-			 	</div>
-			
-				<div id="bypass-info">
-					<label>Bypass tools (N/A if not applicable):</label><br>
-						<input name="bypass-details" type="text">
-						<br>
+					<label>Picking tools (N/A if not applicable):</label><br> <input
+						name="pick-details" type="text"> <br>
 				</div>
-			
+
+				<div id="bypass-info">
+					<label>Bypass tools (N/A if not applicable):</label><br> <input
+						name="bypass-details" type="text"> <br>
+				</div>
+
 			</div>
-			
+
 			<div class="pick-request" id="pick-request">
 				<label for="pick-details">Tell us about you pick request:</label><br>
-				<input type="text" name="pick-info">
-				<br>
-				
+				<input type="text" name="pick-info"> <br>
+
 			</div>
-			
+
 			<div class="tension-request" id="tension-request">
-				<label for="tension-details">Tell us about you tension request:</label><br>
-				<input type="text" name="tension-info">
-				<br>
+				<label for="tension-details">Tell us about you tension
+					request:</label><br> <input type="text" name="tension-info"> <br>
 			</div>
-				
+
 			<div class="bypass-request" id="bypass-request">
-				<label for="bypass-details">Tell us about your bypass request:</label><br>
-				<input type="text" name="bypass-info">
-				<br>
+				<label for="bypass-details">Tell us about your bypass
+					request:</label><br> <input type="text" name="bypass-info"> <br>
 			</div>
-			
+
 			<div class="other-request" id="other-request">
 				<label for="other-details">Tell us more about this request:</label><br>
-				<input type="text" name="other-info"> 
-				<br>
-				<br>
-				<br> 
+				<input type="text" name="other-info"> <br> <br> <br>
 			</div>
-			<br>
-			<input type="button" onclick="submitForm()" class="modal-submit-button" value="Submit" />
+			<br> <input type="button" onclick="submitForm()"
+				class="modal-submit-button" value="Submit" />
 		</form>
 	</div>
-	<br><br><br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<script>
-	
-	function submitForm() {
-		var modal = document.getElementById("ex1")
-		   var frm = document.getElementsByName('contact-form')[0];
-		   frm.submit();
-		   modal.close();
-		   return false;
+		function submitForm() {
+			var modal = document.getElementById("ex1")
+			var frm = document.getElementsByName('contact-form')[0];
+			frm.submit();
+			modal.close();
+			return false;
 		}
-	
-	$('#lock-request').hide();
-	$('#pick-request').hide();
-	$('#tension-request').hide();
-	$('#bypass-request').hide();
-	$('#other-request').hide();
-	
-	$("#request-object").change(function () {
-        var type = $( "#request-object option:selected" ).val();
-        if(type=="lock")
-        {
 
-        	$('#pick-request').hide();
-        	$('#tension-request').hide();
-        	$('#bypass-request').hide();
-        	$('#other-request').hide();
-           	$("#lock-request").show();
-           	
-        }
-        else if(type=="pick")
-        {
-        	$('#lock-request').hide();
-        	$('#tension-request').hide();
-        	$('#bypass-request').hide();
-        	$('#other-request').hide();
-        	$("#pick-request").show();
-        }
-        else if(type=="tension")
-        {
-        	$('#lock-request').hide();
-        	$('#pick-request').hide();
-        	$('#bypass-request').hide();
-        	$('#other-request').hide();
-        	$("#tension-request").show();
-        }
-        else if(type=="bypass")
-        {
-        	$('#lock-request').hide();
-        	$('#pick-request').hide();
-        	$('#tension-request').hide();
-        	$('#other-request').hide();
-        	$("#bypass-request").show();
-        }
-        else if(type=="other")
-        {
-        	$('#lock-request').hide();
-        	$('#pick-request').hide();
-        	$('#tension-request').hide();
-        	$('#bypass-request').hide();
-        	$("#other-request").show();
-        }
-    });
+		$('#lock-request').hide();
+		$('#pick-request').hide();
+		$('#tension-request').hide();
+		$('#bypass-request').hide();
+		$('#other-request').hide();
+
+		$("#request-object").change(function() {
+			var type = $("#request-object option:selected").val();
+			if (type == "lock") {
+
+				$('#pick-request').hide();
+				$('#tension-request').hide();
+				$('#bypass-request').hide();
+				$('#other-request').hide();
+				$("#lock-request").show();
+
+			} else if (type == "pick") {
+				$('#lock-request').hide();
+				$('#tension-request').hide();
+				$('#bypass-request').hide();
+				$('#other-request').hide();
+				$("#pick-request").show();
+			} else if (type == "tension") {
+				$('#lock-request').hide();
+				$('#pick-request').hide();
+				$('#bypass-request').hide();
+				$('#other-request').hide();
+				$("#tension-request").show();
+			} else if (type == "bypass") {
+				$('#lock-request').hide();
+				$('#pick-request').hide();
+				$('#tension-request').hide();
+				$('#other-request').hide();
+				$("#bypass-request").show();
+			} else if (type == "other") {
+				$('#lock-request').hide();
+				$('#pick-request').hide();
+				$('#tension-request').hide();
+				$('#bypass-request').hide();
+				$("#other-request").show();
+			}
+		});
 	</script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>

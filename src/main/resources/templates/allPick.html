@@ -33,36 +33,32 @@
 			</ul>
 		</div>
 	</nav>
-	
+
 	<div id="center">
 		<h1 style="font-size: 50px;">Lock Picks</h1>
-		<h2 th:text = "${pickCount} + ' ' + 'picks listed so far'"></h2>
+		<h2 th:text="${pickCount} + ' ' + 'picks listed so far'"></h2>
+		<br>
+		<h3>(Click on each block to see how they work)</h3>
 	</div>
 
-	<table>
-		<tr th:each="pick:${pick}">
-			<td th:text="${pick.toShortString()}"></td>
-			<td><img th:src="@{{img}(img=${pick.image})}" onerror="this.style.display='none'"></td>
-			<td><form class="add-btn-form"
-					th:action="@{/allPick/{id}(id=${pick.toolId})}" method="GET">
-					<input class="add-btn" type="submit" value="See More" />
-				</form></td>
-		</tr>
-	</table>
 	<div class="center">
 		<form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/addPick}"
 			method="GET">
 			<input type="submit" value="Add Pick">
 		</form>
 	</div>
-	<br>
-	<div style="width:50%;margin:auto;">
-		<h3>How picking works:</h3>
-		<br>
-		<iframe style="width:100%;aspect-ratio:16/9" width="560" height="315"
-			src="https://www.youtube.com/embed/TjRj69P5rKM?start=35"
-			title="How a pin tumber lock works"></iframe>
-	</div>
+
+	<table>
+		<tr th:each="pick:${pick}">
+			<td th:text="${pick.toShortString()}"></td>
+			<td><img th:src="@{{img}(img=${pick.image})}"
+				onerror="this.style.display='none'"></td>
+			<td><form class="add-btn-form"
+					th:action="@{/allPick/{id}(id=${pick.toolId})}" method="GET">
+					<input class="add-btn" type="submit" value="See More" />
+				</form></td>
+		</tr>
+	</table>
 	<br>
 	<br>
 	<br>
