@@ -30,7 +30,7 @@ This is an application made to store lock picks, tension tools, bypass tools and
 <ol>
   <li>User detail pages</li>
   <li>Direct file upload as opposed to linking to images</li>
-  <li>Smithing pages, going into further detail about the internal mechanisms of each lock</li>
   <li>Share buttons allowing users to send locks and tools easily</li>
   <li>Sorting by brand name once more locks are in the database</li>
+  <li>Smithing pages, going into further detail about the internal mechanisms of each lock</li>
 </ol>
