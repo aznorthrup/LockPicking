@@ -12,10 +12,11 @@ This is an application made to store and share lock picks, tension tools, bypass
   <li>CSS</li>
   <li>JavaScript</li>
   <li>jQuery</li>
+  <li>BootStrap</li>
   <li>Spring Boot</li>
   <li>Spring Security</li>
   <li>MySQL</li>
-  <li>jUnit testing</li>
+  <li>jUnit</li>
 </ul>
 
 <h1>Deployment</h1>
