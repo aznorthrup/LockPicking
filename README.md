@@ -22,8 +22,8 @@ This is an application made to store lock picks, tension tools, bypass tools and
 <h1>Deployment</h1>
 <ul>
   <li>Deployed through <a href="https://lockpickingapp.herokuapp.com/">Heroku</a></li>
-  <li>Uses ClearDB as a database.</li>
-  <li>User requests send as emails via FormSubmit.</li>
+  <li>Uses ClearDB as a database</li>
+  <li>User requests send as emails via FormSubmit</li>
 </ul>
 
 <h1>Future updates</h1>
