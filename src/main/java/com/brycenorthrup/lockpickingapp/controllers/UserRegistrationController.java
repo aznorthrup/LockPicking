@@ -36,7 +36,7 @@ public class UserRegistrationController {
 	public String registerUser(@Valid UserRegistrationDto registrationDto, BindingResult bind) {
 		if (bind.hasErrors()){
 			logger.info("Failed to save a user");
-			return "registration.html";
+			return "redirect:/registration?error";
 		}else {			
 			userService.save(registrationDto);
 			logger.info("Saved new user with email of " + registrationDto.getEmail());

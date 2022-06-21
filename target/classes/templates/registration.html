@@ -55,6 +55,10 @@
 		</table>
 	</form>
 	<br>
+	<div th:if="${param.error}">
+		<div class="alert alert-info center">Invalid username or
+			password!</div>
+	</div>
 	<div th:if="${param.success}">
 		<div class="alert alert-info center">Welcome to the application!</div>
 	</div>
