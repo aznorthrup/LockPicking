@@ -24,23 +24,32 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
-				<li style="float: right;"><a class="nav-link"
-					th:href="@{/logout}">Sign Out</a></li>
 
-				<li style="float: right;"><a class="nav-link, username"
+				<li style="float: right;"><a sec:authorize="isAuthenticated()"
+					class="nav-link" th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a sec:authorize="isAnonymous()"
+					class="nav-link" th:href="@{/login}">Log In</a></li>
+
+				<li style="float: right;"><a class="nav-link, username" sec:authorize="isAnonymous()">Welcome!</a>
+					<a sec:authorize="isAuthenticated()" class="nav-link, username"
 					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
 	</nav>
-	
+
 	<table>
-	<tr><td><h1 th:text="${tension.getToolType()}"></h1><td></tr>
+		<tr>
+			<td><h1 th:text="${tension.getToolType()}"></h1>
+			<td>
+		</tr>
 		<tr th:each="tension:${tension}">
 			<td th:text="${tension.toString()}"></td>
 		</tr>
 		<tr class="spacer"></tr>
 		<tr>
-			<td align="center"><img th:src="@{{img}(img=${tension.image})}" onerror="this.style.display='none'"></td>
+			<td align="center"><img th:src="@{{img}(img=${tension.image})}"
+				onerror="this.style.display='none'"></td>
 		</tr>
 	</table>
 	<div class="center">

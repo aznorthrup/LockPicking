@@ -78,7 +78,6 @@ public class LockClassController {
 		LockClass lock = lockRepository.findById(id)
 				.orElseThrow(() -> new LockException("Invalid lock id: " + id));
 		logger.info("Displayed update page for lock with id: " + id);
-
 		model.addAttribute("pick", pickRepository.findAll());
 		model.addAttribute("tension", tensionRepository.findAll());
 		model.addAttribute("bestBypass", bypassRepository.findAll());

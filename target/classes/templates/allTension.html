@@ -24,10 +24,15 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
-				<li style="float: right;"><a class="nav-link"
-					th:href="@{/logout}">Sign Out</a></li>
 
-				<li style="float: right;"><a class="nav-link, username"
+				<li style="float: right;"><a sec:authorize="isAuthenticated()"
+					class="nav-link" th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a sec:authorize="isAnonymous()"
+					class="nav-link" th:href="@{/login}">Log In</a></li>
+
+				<li style="float: right;"><a class="nav-link, username" sec:authorize="isAnonymous()">Welcome!</a>
+					<a sec:authorize="isAuthenticated()" class="nav-link, username"
 					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
