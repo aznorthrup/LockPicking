@@ -126,9 +126,12 @@ public class LockClass {
 
 	@Override
 	public String toString() {
-		if (this.pick == null || this.tension == null || this.bestBypass == null) {
-			return "The " + brand + " " + model + " has a " + material + " shackle."
-					+ "Its picking and best bypass information are not known... yet!";
+		if (this.pick == null && this.bestBypass == null) {
+			return "The " + brand + " " + model + " has a " + material + " shackle. "
+					+ "Its picking and best bypass information still need updating!";
+		}else if (this.tension == null && this.bestBypass == null) {
+			return "The " + brand + " " + model + " has a " + material + " shackle. "
+					+ "Its picking and best bypass information still need updating!";
 		} else if (this.pick == null || this.tension == null && this.bestBypass != null) {
 			return "The " + brand + " " + model + " has a " + material + " shackle. "
 					+ "It still needs picking information, but it is best bypassed with a "
@@ -136,7 +139,7 @@ public class LockClass {
 		} else if (this.pick != null && this.tension != null && this.bestBypass == null) {
 			return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a "
 					+ pick.getToolType() + " and a " + tension.getToolType()
-					+ ". It's best bypass method is not known... yet!";
+					+ ". It's best bypass method still needs updating!";
 		} else {
 			return "The " + brand + " " + model + " has a " + material + " shackle." + "It can be picked with a "
 					+ pick.getToolType() + " and a " + tension.getToolType() + ", and is best bypassed with a "

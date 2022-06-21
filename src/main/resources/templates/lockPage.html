@@ -49,12 +49,13 @@
 		<tr>
 			<td align="center"><div
 					style="display: flex; justify-content: space-between;">
-					<img style="width: 30%;"
-						th:src="@{{img}(img=${lock.getPick().image})}"><br> <img
-						style="width: 30%;"
-						th:src="@{{img}(img=${lock.getTension().image})}"><br>
-					<img style="width: 30%;"
-						th:src="@{{img}(img=${lock.getBestBypass().image})}">
+					<img style="width: 30%;" th:if="${lock.getPick()!=null}"
+						th:src="@{{img}(img=${lock.getPick().image})}"><img style="width:30%;" th:if="${lock.getPick()==null}" th:src="@{/img/nopick.png}"><br>
+						<img
+						style="width: 30%;" th:if="${lock.getTension()!=null}"
+						th:src="@{{img}(img=${lock.getTension().image})}"><img style="width:30%;" th:if="${lock.getTension()==null}" th:src="@{/img/notension.png}"><br>
+					<img style="width: 30%;" th:if="${lock.getBestBypass()!=null}"
+						th:src="@{{img}(img=${lock.getBestBypass().image})}"><img style="width:30%;" th:if="${lock.getBestBypass()==null}" th:src="@{/img/nobypass.png}">
 				</div></td>
 		</tr>
 		<tr class="spacer"></tr>
