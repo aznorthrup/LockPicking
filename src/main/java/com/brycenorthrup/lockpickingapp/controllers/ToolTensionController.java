@@ -27,27 +27,6 @@ public class ToolTensionController {
 	@GetMapping(path="/allTension")
 	public String getAllTension(Model model) {
 		Iterable<ToolTension> tension = tensionRepository.findAll();
-		int count = 0;
-		for (@SuppressWarnings("unused") Object i : tension) {
-			count++;
-		}
-		if (count==0) {
-			logger.info("Added initial batch of tension tools.");
-			ToolTension tension1 = new ToolTension("Mantis", "all forms of", "cylindrical");
-			tension1.setImage("/img/tension/mantis.jpg");
-			ToolTension tension2 = new ToolTension("Spring", "bottom of the keyway",
-					"precisely aligned cylinders and narrow");
-			tension2.setImage("/img/tension/spring.jpg");
-			ToolTension tension3 = new ToolTension("Z-Bar", "bottom of the keyway", "simple and flush");
-			tension3.setImage("/img/tension/zbar.jpg");
-			ToolTension tension4 = new ToolTension("Z-Bar TOK", "top of the keyway", "guarded and complex ");
-			tension4.setImage("/img/tension/zbartok.jpg");
-			tensionRepository.save(tension1);
-			tensionRepository.save(tension2);
-			tensionRepository.save(tension3);
-			tensionRepository.save(tension4);
-		}
-		tension = tensionRepository.findAll();
 		logger.info("Displayed all tension tools");
 		model.addAttribute("tension", tension);
 		model.addAttribute("tensionCount", tensionRepository.countTension());

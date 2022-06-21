@@ -2,6 +2,8 @@ package com.brycenorthrup.lockpickingapp.controllers;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +17,8 @@ import com.brycenorthrup.lockpickingapp.services.UserService;
 public class UserRegistrationController {
 
 	private UserService userService;
+	
+	private Logger logger = LoggerFactory.getLogger(LoggerController.class);
 
 	public UserRegistrationController(UserService userService) {
 		super();
@@ -23,6 +27,7 @@ public class UserRegistrationController {
 	
 	@GetMapping("/registration")
 	public String showRegistrationForm(Model model) {
+		logger.info("Displayed registration page");
 		model.addAttribute("user", new UserRegistrationDto());
 		return "registration.html";
 	}
@@ -30,9 +35,11 @@ public class UserRegistrationController {
 	@PostMapping("/registration")
 	public String registerUser(@Valid UserRegistrationDto registrationDto, BindingResult bind) {
 		if (bind.hasErrors()){
+			logger.info("Failed to save a user");
 			return "registration.html";
 		}else {			
 			userService.save(registrationDto);
+			logger.info("Saved new user with email of " + registrationDto.getEmail());
 			return "redirect:/registration?success";
 		}
 	}

@@ -6,7 +6,7 @@
 	font-family: 'Roboto', sans-serif;
 }
 
-body {
+html {
 	background-color: rgb(60, 60, 60);
 	color: white;
 }
@@ -38,10 +38,6 @@ li a {
 
 li a:hover {
 	background-color: #111;
-}
-
-.username:hover{
-	background-color:#333;
 }
 
 .active {
@@ -95,20 +91,6 @@ button {
 
 button:hover {
 	background-color: rgb(170, 50, 50);
-}
-
-.edit-and-delete-buttons{
-	width: 15%;
-	height: 2rem;
-	color: white;
-	border: none;
-	background-color: rgb(170, 50, 50, 75%);
-	border: none;
-	color: white;
-	border-radius: 20px;
-	box-shadow: 3px 3px 3px black;
-	font-size:13px;
-	padding-left:0;
 }
 
 .center {
