@@ -44,17 +44,18 @@ div {
 				<li style="float: right;"><a sec:authorize="isAnonymous()"
 					class="nav-link" th:href="@{/login}">Sign In</a></li>
 
-				<li style="float: right;"><a class="nav-link, username" sec:authorize="isAnonymous()">Welcome!</a>
-					<a sec:authorize="isAuthenticated()" class="nav-link, username"
+				<li style="float: right;"><a class="nav-link, username"
+					sec:authorize="isAnonymous()">Welcome!</a> <a
+					sec:authorize="isAuthenticated()" class="nav-link, username"
 					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 
 			</ul>
 		</div>
 	</nav>
-	<div id="center" style="width: 75%;">
-		<h1 style="font-size: 50px;">Welcome to the lock box!</h1>
+	<div id="center" style="width: 100%;">
+		<h1 style="font-size: 50px;width:75%;margin:auto;">Welcome to the lock box!</h1>
 		<br>
-		<h3 style="width: 100%;">
+		<h3 style="width: 75%;">
 			<span style="color: rgb(170, 50, 50)"> Security by obscurity:</span><br>
 			<br>The long-standing delusion that as long as nobody truly
 			knows how a lock works, they won't know how to get past it. In an era
@@ -62,6 +63,15 @@ div {
 			pockets, <em>security by obscurity is not good enough.</em> But don't
 			take my word for it. Why not see for yourself?
 		</h3>
+		<br>
+		<div sec:authorize="isAuthenticated()">
+			<h3 class="modal-open">
+				<a href="#ex1" rel="modal:open">Have a request? Click here to
+					let us know!</a>
+			</h3>
+		</div>
+		<br>
+		<hr>
 		<br>
 		<h3>To get us started, here is how a pin-tumbler lock works:</h3>
 		<br>
@@ -91,22 +101,17 @@ div {
 		</div>
 	</div>
 	<br>
-	<div sec:authorize="isAuthenticated()">
-		<h3>Have a request?</h3>
-		<br>
-		<h3 class="modal-open">
-			<a href="#ex1" rel="modal:open">Click here to let us know!</a>
-		</h3>
-	</div>
+
 	<div id="ex1" class="modal">
 		<form action="https://formsubmit.co/f1d9da07782069bbdf156ee67fa7c26c"
 			name="contact-form" method="POST">
 			<h2>What is your request about?</h2>
 
 			<div class="request-object" sec:authorize="isAuthenticated()">
-			<input name="user-email" th:value="${#authentication.getPrincipal().getUsername()}" style="display:none;"/>
-				<select name="request-object" id="request-object"
-					class="modal-select">
+				<input name="user-email"
+					th:value="${#authentication.getPrincipal().getUsername()}"
+					style="display: none;" /> <select name="request-object"
+					id="request-object" class="modal-select">
 					<option selected disabled>Choose an option</option>
 					<option value="lock">Lock</option>
 					<option value="pick">Pick</option>
