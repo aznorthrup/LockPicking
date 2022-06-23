@@ -3,9 +3,7 @@
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/img/lockicon.png">
+<link rel="icon" type="image/png" href="/img/lockicon.png">
 <link rel="stylesheet" href="/css/styles.css" />
 <title>Locks</title>
 </head>
@@ -27,15 +25,18 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
-						
+
+				<li><a class="nav-link" th:href="@{/terminology}">Terminology</a></li>
+
 				<li style="float: right;"><a sec:authorize="isAuthenticated()"
 					class="nav-link" th:href="@{/logout}">Sign Out</a></li>
 
 				<li style="float: right;"><a sec:authorize="isAnonymous()"
 					class="nav-link" th:href="@{/login}">Sign In</a></li>
 
-				<li style="float: right;"><a class="nav-link, username" sec:authorize="isAnonymous()">Welcome!</a>
-					<a sec:authorize="isAuthenticated()" class="nav-link, username"
+				<li style="float: right;"><a class="nav-link, username"
+					sec:authorize="isAnonymous()">Welcome!</a> <a
+					sec:authorize="isAuthenticated()" class="nav-link, username"
 					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>

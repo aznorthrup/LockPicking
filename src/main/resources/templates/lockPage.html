@@ -3,9 +3,7 @@
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/img/lockicon.png">
+<link rel="icon" type="image/png" href="/img/lockicon.png">
 <link rel="stylesheet" href="/css/forms.css">
 <title>Lock</title>
 </head>
@@ -28,14 +26,17 @@
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
 
+				<li><a class="nav-link" th:href="@{/terminology}">Terminology</a></li>
+
 				<li style="float: right;"><a sec:authorize="isAuthenticated()"
 					class="nav-link" th:href="@{/logout}">Sign Out</a></li>
 
 				<li style="float: right;"><a sec:authorize="isAnonymous()"
 					class="nav-link" th:href="@{/login}">Sign In</a></li>
 
-				<li style="float: right;"><a class="nav-link, username" sec:authorize="isAnonymous()">Welcome!</a>
-					<a sec:authorize="isAuthenticated()" class="nav-link, username"
+				<li style="float: right;"><a class="nav-link, username"
+					sec:authorize="isAnonymous()">Welcome!</a> <a
+					sec:authorize="isAuthenticated()" class="nav-link, username"
 					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
 			</ul>
 		</div>
@@ -53,12 +54,17 @@
 			<td align="center"><div
 					style="display: flex; justify-content: space-between;">
 					<img style="width: 30%;" th:if="${lock.getPick()!=null}"
-						th:src="@{{img}(img=${lock.getPick().image})}"><img style="width:30%;" th:if="${lock.getPick()==null}" th:src="@{/img/nopick.png}"><br>
-						<img
+						th:src="@{{img}(img=${lock.getPick().image})}"><img
+						style="width: 30%;" th:if="${lock.getPick()==null}"
+						th:src="@{/img/nopick.png}"><br> <img
 						style="width: 30%;" th:if="${lock.getTension()!=null}"
-						th:src="@{{img}(img=${lock.getTension().image})}"><img style="width:30%;" th:if="${lock.getTension()==null}" th:src="@{/img/notension.png}"><br>
-					<img style="width: 30%;" th:if="${lock.getBestBypass()!=null}"
-						th:src="@{{img}(img=${lock.getBestBypass().image})}"><img style="width:30%;" th:if="${lock.getBestBypass()==null}" th:src="@{/img/nobypass.png}">
+						th:src="@{{img}(img=${lock.getTension().image})}"><img
+						style="width: 30%;" th:if="${lock.getTension()==null}"
+						th:src="@{/img/notension.png}"><br> <img
+						style="width: 30%;" th:if="${lock.getBestBypass()!=null}"
+						th:src="@{{img}(img=${lock.getBestBypass().image})}"><img
+						style="width: 30%;" th:if="${lock.getBestBypass()==null}"
+						th:src="@{/img/nobypass.png}">
 				</div></td>
 		</tr>
 		<tr class="spacer"></tr>

@@ -3,9 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/img/lockicon.png">
+<link rel="icon" type="image/png" href="/img/lockicon.png">
 <link rel="stylesheet" href="/css/updateforms.css">
 <title>Update Tension Tool</title>
 </head>
@@ -27,6 +25,8 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/terminology}">Terminology</a></li>
 
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
@@ -71,7 +71,7 @@
 
 				<td th:if="${#fields.hasErrors('toolUse')}" th:errors="*{toolUse}">Tool
 					Use Error</td>
-					
+
 				<td th:if="${#fields.hasErrors('image')}" th:errors="*{image}">Image
 					Error</td>
 				<td><button type="submit">Submit</button></td>

@@ -2,9 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/img/lockicon.png">
+<link rel="icon" type="image/png" href="/img/lockicon.png">
 <link rel="stylesheet" type="text/css" href="/css/users.css" />
 <title>Sign In</title>
 </head>
@@ -26,6 +24,9 @@
 
 				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/terminology}">Terminology</a></li>
+
 				<li style="float: right;"><a class="nav-link, active"
 					th:href="@{/login}">Log In</a></li>
 
@@ -35,7 +36,7 @@
 
 	<form th:action="@{/login}" method="POST">
 		<table style="width: 30%;">
-			<tr style="height:5%;text-align:center;">
+			<tr style="height: 5%; text-align: center;">
 				<td colspan=2 style="font-size: 1.2rem;"><h2>Login</h2></td>
 			</tr>
 			<tr>

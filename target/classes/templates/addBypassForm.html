@@ -3,9 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link rel="icon" 
-      type="image/png" 
-      href="/img/lockicon.png">
+<link rel="icon" type="image/png" href="/img/lockicon.png">
 <link rel="stylesheet" href="/css/updateforms.css">
 <title>New Bypass Method</title>
 </head>
@@ -27,6 +25,9 @@
 
 				<li><a class="nav-link, active" th:href="@{/allBypass}">Bypass
 						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/terminology}">Terminology</a></li>
+
 				<li style="float: right;"><a class="nav-link"
 					th:href="@{/logout}">Sign Out</a></li>
 
@@ -78,7 +79,8 @@
 			<tr class="spacer"></tr>
 			<tr style="display: block;">
 				<td width="50%">Bypass image: <input id="newPicUrl"
-					style="width: 46.5%;" type="text" name="image" value="https://iheartcraftythings.com/wp-content/uploads/2021/10/6-131.jpg"
+					style="width: 46.5%;" type="text" name="image"
+					value="https://iheartcraftythings.com/wp-content/uploads/2021/10/6-131.jpg"
 					placeholder="https://xyz.com/zyx.jpg" /></td>
 			</tr>
 			<tr class="spacer"></tr>
