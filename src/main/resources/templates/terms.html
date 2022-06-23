@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<link rel="icon" type="image/png" href="/img/lockicon.png">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="/css/styles.css">
+<title>Terminology</title>
+<style>
+h3 {
+	width: 50%;
+	margin: auto;
+}
+
+div {
+	margin:auto;
+	text-align: left;
+	width: 80%;
+}
+
+p {
+	padding: 1rem;
+	margin: 0 0.5rem 0.5rem 0;
+	background-color: rgb(30, 30, 30, 75%);
+	box-shadow: 5px 5px 5px black;
+	border-radius: 20px;
+	font-size:x-large;
+}
+
+span {
+	color: rgb(170, 50, 50);
+}
+</style>
+</head>
+<body>
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-md bg-dark navbar-dark">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+
+				<li><a class="nav-link" th:href="@{/}">Home</a></li>
+
+				<li><a class="nav-link" th:href="@{/allLocks}">Locks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allPick}">Lock Picks</a></li>
+
+				<li><a class="nav-link" th:href="@{/allTension}">Tension
+						Tools</a></li>
+
+				<li><a class="nav-link" th:href="@{/allBypass}">Bypass
+						Tools</a></li>
+
+				<li><a class="nav-link, active" th:href="@{/terminology}">Terminology</a></li>
+
+				<li style="float: right;"><a sec:authorize="isAuthenticated()"
+					class="nav-link" th:href="@{/logout}">Sign Out</a></li>
+
+				<li style="float: right;"><a sec:authorize="isAnonymous()"
+					class="nav-link" th:href="@{/login}">Sign In</a></li>
+
+				<li style="float: right;"><a class="nav-link, username"
+					sec:authorize="isAnonymous()">Welcome!</a> <a
+					sec:authorize="isAuthenticated()" class="nav-link, username"
+					th:text="'Logged in as' + ' ' + ${#authentication.getPrincipal().getUsername()}"></a></li>
+
+			</ul>
+		</div>
+	</nav>
+	<div id="center" style="width: 100%;">
+		<h1 style="font-size: 50px; width: 75%; margin: auto;">Terminology</h1>
+		<br>
+	</div>
+	<div>
+	<p>
+			<span>Keyway: </span><br>
+			The part of the lock you put the key into.
+		</p>
+		<p>
+			<span>Lock Cylinder: </span><br>
+			The part of the lock that houses the keyway. This is completely separated from the rest of the lock, and can be removed or replaced.
+		</p>
+		<p>
+			<span>Pins: </span><br>
+			There are two types of pins, security and driver. The driver pins are at the top of every column of pin, and push the security pins into the keyway. The security pins make direct contact with the key itself.
+		</p>
+		<br>
+		<p>
+			<span>Shear Line: </span><br>
+			The space between the lock cylinder and the rest of the lock body.
+		</p>
+		<br>
+		<p>
+			<span>Tension Tool: </span><br>
+			Inserted into the keyway to turn the lock as a key would.
+		</p>
+		<br>
+		<p>
+			<span>Pick: </span><br>
+			Manipulates the pins, the goal being to move the space between each pin up to the shear line.
+		</p>
+		<br>
+		<p>
+			<span>Bypass Tool: </span><br>
+			Opens the lock without the need for picking. Usually much faster than picking, and exploits a problem with the lock itself.
+		</p>
+		<br>
+	</div>
+</body>
