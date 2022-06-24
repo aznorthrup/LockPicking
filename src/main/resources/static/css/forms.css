@@ -7,7 +7,7 @@
 }
 
 body {
-	min-height:100%;
+	min-height: 100%;
 	background-color: rgb(60, 60, 60);
 	color: white;
 }
@@ -60,7 +60,7 @@ li a:hover {
 }
 
 table {
-	min-height: 100%; 
+	min-height: 100%;
 	width: 75%;
 	margin: auto;
 	margin-top: 5%;
@@ -138,4 +138,19 @@ img {
 	display: block;
 	width: 50%;
 	border-radius: 20px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #333;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
 }
