@@ -66,7 +66,7 @@ This is an application made to store lock picks, tension tools, bypass tools and
 
 <h1>Role Examples</h1>
 
-<h3>Unauthenticated(left) vs Authenticated(right)</h3>
+<h3>Unauthenticated(first image) vs Authenticated(second image)</h3>
 
 <h6>When viewing the home page</h6>
 <img src="https://user-images.githubusercontent.com/85071007/176010518-76e93b94-1785-42c5-8e0d-bd1b2515e2d7.JPG" style="width: 550px;margin:5px;" />
@@ -80,7 +80,7 @@ This is an application made to store lock picks, tension tools, bypass tools and
 <img src="https://user-images.githubusercontent.com/85071007/176010746-32a76c89-03f2-45bf-bbd4-c5dd41cf1929.JPG" style="width: 550px;margin:5px;" />
 
 
-<h3>Users(left) vs Administrators(right)</h3>
+<h3>Users(first image) vs Administrators(second image)</h3>
 
 <h6>When viewing the list of locks</h6>
 <img src="https://user-images.githubusercontent.com/85071007/176010773-d6ae22e6-af65-42ff-9657-61440be7fad7.JPG" style="width: 550px;margin:5px;" />
