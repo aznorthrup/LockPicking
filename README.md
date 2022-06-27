@@ -69,36 +69,36 @@ This is an application made to store lock picks, tension tools, bypass tools and
 <h3>Unauthenticated(first image) vs Authenticated(second image)</h3>
 
 <h6>When viewing the home page</h6>
-<img src="https://user-images.githubusercontent.com/85071007/176010518-76e93b94-1785-42c5-8e0d-bd1b2515e2d7.JPG" style="width: 550px;margin:5px;" />
-<img src="https://user-images.githubusercontent.com/85071007/176010593-316ff810-bc19-4b09-98d9-309ab6172a83.JPG" style="width: 550px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010518-76e93b94-1785-42c5-8e0d-bd1b2515e2d7.JPG" style="width: 350px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010593-316ff810-bc19-4b09-98d9-309ab6172a83.JPG" style="width: 350px;margin:5px;" />
 
 
 <br>
 
 <h6>Welcome message</h6>
-<img src="https://user-images.githubusercontent.com/85071007/176010758-269ea12c-4d85-412f-86a8-095ed2524a58.JPG" style="width: 550px;margin:5px;" />
-<img src="https://user-images.githubusercontent.com/85071007/176010746-32a76c89-03f2-45bf-bbd4-c5dd41cf1929.JPG" style="width: 550px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010758-269ea12c-4d85-412f-86a8-095ed2524a58.JPG" style="width: 350px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010746-32a76c89-03f2-45bf-bbd4-c5dd41cf1929.JPG" style="width: 350px;margin:5px;" />
 
 
 <h3>Users(first image) vs Administrators(second image)</h3>
 
 <h6>When viewing the list of locks</h6>
-<img src="https://user-images.githubusercontent.com/85071007/176010773-d6ae22e6-af65-42ff-9657-61440be7fad7.JPG" style="width: 550px;margin:5px;" />
-<img src="https://user-images.githubusercontent.com/85071007/176010782-c5cf0728-3236-4894-82f0-08505f943de5.JPG" style="width: 550px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010773-d6ae22e6-af65-42ff-9657-61440be7fad7.JPG" style="width: 350px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176010782-c5cf0728-3236-4894-82f0-08505f943de5.JPG" style="width: 350px;margin:5px;" />
 
 
 <br>
 
 <h6>When viewing a particular lock</h6>
-<img src="https://user-images.githubusercontent.com/85071007/176011078-1b4af842-0267-478b-9d02-3261cbb6dfe3.JPG" style="width: 550px;margin:5px;" />
-<img src="https://user-images.githubusercontent.com/85071007/176011099-70fbd24a-1767-4162-a5dc-8f67438b79dc.JPG" style="width: 550px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176011078-1b4af842-0267-478b-9d02-3261cbb6dfe3.JPG" style="width: 350px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176011099-70fbd24a-1767-4162-a5dc-8f67438b79dc.JPG" style="width: 350px;margin:5px;" />
 
 
 <br>
 
 <h6>When navigating to "/add..." from the url</h6>
-<img src="https://user-images.githubusercontent.com/85071007/176011376-9f8a0d1e-7310-4d84-885c-503ec0ca2b24.JPG" style="width: 550px;margin:5px;" />
-<img src="https://user-images.githubusercontent.com/85071007/176011314-3c980bc3-88c5-49a9-9ea2-89f1329ec164.JPG" style="width: 550px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176011376-9f8a0d1e-7310-4d84-885c-503ec0ca2b24.JPG" style="width: 350px;margin:5px;" />
+<img src="https://user-images.githubusercontent.com/85071007/176011314-3c980bc3-88c5-49a9-9ea2-89f1329ec164.JPG" style="width: 350px;margin:5px;" />
 
 
 <h1>Future Updates</h1>
