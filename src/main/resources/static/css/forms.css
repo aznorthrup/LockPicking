@@ -43,6 +43,11 @@ li a {
 	text-decoration: none;
 }
 
+.lockanchor{
+	display:block;
+	width:30%;
+}
+
 li a:hover {
 	background-color: #111;
 }
